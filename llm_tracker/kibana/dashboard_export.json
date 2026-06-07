@@ -1,0 +1,17 @@
+{
+  "_comment": "This file is used as a reference. The actual dashboard is created by scripts/create_dashboard.ps1 using the Kibana Saved Objects API with inline Lens panels.",
+  "version": "8.12.0",
+  "dashboard_id": "llm-dashboard-main",
+  "data_view_id": "llm-data-view",
+  "index_name": "llm_value_scores",
+  "panels": [
+    {"id": "p1", "title": "Total Models",                     "type": "lnsMetric", "description": "Count of all models in the index"},
+    {"id": "p2", "title": "Ranked Models",                    "type": "lnsMetric", "description": "Count of models with LMSYS quality data"},
+    {"id": "p3", "title": "Avg USD/1M tokens",                "type": "lnsMetric", "description": "Average price across paid models"},
+    {"id": "p4", "title": "Top 10 Best Value LLMs",           "type": "lnsXY",     "description": "Bar chart: models ranked by Value Score"},
+    {"id": "p5", "title": "Models by Provider (Top 15)",      "type": "lnsXY",     "description": "Bar chart: model count per provider"},
+    {"id": "p6", "title": "Price Tier Distribution",          "type": "lnsPie",    "description": "Donut: free/budget/mid/premium/ultra"},
+    {"id": "p7", "title": "Quality Tier Distribution",        "type": "lnsPie",    "description": "Donut: elite/high/medium/low/unranked"},
+    {"id": "p8", "title": "Top Providers by Avg Value Score",  "type": "lnsXY",     "description": "Bar chart: providers ranked by avg value score"}
+  ]
+}

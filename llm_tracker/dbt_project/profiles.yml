@@ -1,0 +1,7 @@
+llm_tracker:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /opt/airflow/data/llm_tracker.duckdb
+      threads: 2

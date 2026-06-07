@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: openrouter_formatted
+    description: "Normalized LLM pricing from OpenRouter API — formatted layer"
+    columns:
+      - name: model_id
+        tests: [not_null, unique]
+      - name: provider
+        tests: [not_null]
+      - name: avg_price_per_1m_usd
+        tests: [not_null]
+      - name: ingestion_date
+        tests: [not_null]
+
+  - name: lmsys_formatted
+    description: "Normalized LLM rankings from LMSYS Chatbot Arena — formatted layer"
+    columns:
+      - name: model_key
+        tests: [not_null]
+      - name: ingestion_date
+        tests: [not_null]
+
+  - name: llm_value_scores
+    description: "Combined LLM value scores — combined layer (core output)"
+    columns:
+      - name: model_id
+        tests: [not_null]
+      - name: price_tier
+        tests:
+          - accepted_values:
+              values: ['free', 'budget', 'mid', 'premium', 'ultra']
+      - name: quality_tier
+        tests:
+          - accepted_values:
+              values: ['elite', 'high', 'medium', 'low', 'unranked']
