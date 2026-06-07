@@ -1,0 +1,91 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.code-workspace
+
+# Data files (large parquet/json files)
+llm_tracker/data/raw/
+llm_tracker/data/formatted/
+llm_tracker/data/combined/
+
+# Database files
+*.duckdb
+*.db
+*.sqlite
+
+# DBT
+llm_tracker/dbt_project/logs/
+llm_tracker/dbt_project/target/
+llm_tracker/dbt_project/.user.yml
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Docker volumes and data
+postgres-db/
+airflow-logs/
+airflow-plugins/
+elasticsearch-data/
+
+# Temporary files
+create_index.sh
+*.tmp
+*.bak
+*.swp
+*.log
+
+# Documentation (generated or internal)
+llm_tracker_report.pdf
+llm_tracker_submission.zip
+AIRFLOW_SETUP_GUIDE.md
+AIRFLOW_CREDENTIALS.md
+AIRFLOW_DATABASE_INITIALIZED.md
+ELASTICSEARCH_KIBANA_FIXED.md
+FIXES_APPLIED.md
+GETTING_STARTED.md
+PACKAGE_CONTENTS.md
+PROJECT_SUMMARY.txt
+README_RESOURCES.md
+SETUP_SUMMARY.txt
+COMPLETION_REPORT.md
+START_HERE.md
+setup-secure.bat
+docker-compose.secure.yml
+00_READ_ME_FIRST.txt
