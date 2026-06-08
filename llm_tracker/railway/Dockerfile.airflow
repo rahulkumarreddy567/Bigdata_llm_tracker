@@ -1,5 +1,7 @@
 FROM apache/airflow:2.8.1-python3.11
 
+USER root
+
 COPY requirements-airflow.txt /requirements-airflow.txt
 RUN pip install --no-cache-dir -r /requirements-airflow.txt
 
@@ -28,5 +30,7 @@ RUN chmod +x /opt/airflow/airflow-common.sh \
     /opt/airflow/render-bootstrap-dashboard.sh /opt/airflow/data \
  && chmod -R g=u /opt/airflow/dags /opt/airflow/ingestion /opt/airflow/dbt_project \
     /opt/airflow/indexing /opt/airflow/kibana /opt/airflow/data
+
+USER airflow
 
 CMD ["/opt/airflow/airflow-webserver-start.sh"]
