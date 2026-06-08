@@ -82,6 +82,8 @@ If you prefer Railway services to pull prebuilt images instead of building from 
 
 For direct GitHub-to-Render deployment, use the root [render.yaml](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/render.yaml) and [docs/RENDER_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RENDER_DEPLOY.md).
 
+For a free VM-based deployment, use [docs/ORACLE_FREE_TIER_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/ORACLE_FREE_TIER_DEPLOY.md) and `deploy/oracle-bootstrap.sh`.
+
 ## Important fields
 
 The dashboard uses the fields already present in the Elasticsearch mapping:
