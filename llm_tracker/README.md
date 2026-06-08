@@ -72,17 +72,7 @@ For VM-based cloud deployment, use:
 - `deploy/.env.cloud.example`
 - `deploy/deploy-vm.sh`
 
-The deployment guide is available at [docs/CLOUD_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/CLOUD_DEPLOY.md).
-
-For AWS-specific setup, use [docs/AWS_EC2_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/AWS_EC2_DEPLOY.md) and `deploy/ec2-user-data.sh`.
-
-For Railway, use the service configs and start scripts under `railway/`, and follow [docs/RAILWAY_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RAILWAY_DEPLOY.md).
-
-If you prefer Railway services to pull prebuilt images instead of building from source, use [docs/RAILWAY_DOCKER_IMAGE_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RAILWAY_DOCKER_IMAGE_DEPLOY.md).
-
-For direct GitHub-to-Render deployment, use the root [render.yaml](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/render.yaml) and [docs/RENDER_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RENDER_DEPLOY.md).
-
-For a free VM-based deployment, use [docs/ORACLE_FREE_TIER_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/ORACLE_FREE_TIER_DEPLOY.md) and `deploy/oracle-bootstrap.sh`.
+The supported cloud path for this repo is Oracle Cloud Always Free. See [docs/ORACLE_FREE_TIER_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/ORACLE_FREE_TIER_DEPLOY.md).
 
 ## Important fields
 

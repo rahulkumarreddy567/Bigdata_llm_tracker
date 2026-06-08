@@ -25,9 +25,4 @@ Main services:
 
 Use [llm_tracker/README.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/llm_tracker/README.md) for the full project guide.
 
-Cloud deployment notes are in [docs/CLOUD_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/CLOUD_DEPLOY.md).
-AWS EC2 deployment notes are in [docs/AWS_EC2_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/AWS_EC2_DEPLOY.md).
-Railway deployment notes are in [docs/RAILWAY_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RAILWAY_DEPLOY.md).
-Railway Docker image deployment notes are in [docs/RAILWAY_DOCKER_IMAGE_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RAILWAY_DOCKER_IMAGE_DEPLOY.md).
-Render deployment notes are in [docs/RENDER_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RENDER_DEPLOY.md).
-Oracle Cloud Always Free deployment notes are in [docs/ORACLE_FREE_TIER_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/ORACLE_FREE_TIER_DEPLOY.md).
+Deployment documentation is organized in [docs/README.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/README.md), with the Oracle path as the supported cloud setup.

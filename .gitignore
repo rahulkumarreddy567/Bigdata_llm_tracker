@@ -59,7 +59,6 @@ llm_tracker/dbt_project/.user.yml
 .env.local
 .env.*.local
 llm_tracker/deploy/.env.cloud
-llm_tracker/railway/.env.railway
 
 # Docker volumes and data
 postgres-db/
@@ -71,6 +70,7 @@ elasticsearch-data/
 create_index.sh
 *.tmp
 *.bak
+*.vm-backup
 *.swp
 *.log
 
