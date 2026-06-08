@@ -12,6 +12,14 @@ from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 
 
+DBT_RUN_ENV = {
+    "LLM_TRACKER_RUN_DATE": "{{ ds }}",
+    "DBT_LOG_PATH": "/opt/airflow/data/dbt/logs",
+    "DBT_TARGET_PATH": "/opt/airflow/data/dbt/target",
+    "DBT_PACKAGES_INSTALL_PATH": "/opt/airflow/data/dbt/packages",
+}
+
+
 default_args = {
     "owner": "rahul",
     "depends_on_past": False,
@@ -103,6 +111,9 @@ with DAG(
     t3_dbt_run = BashOperator(
         task_id="dbt_format_and_combine",
         bash_command=(
+            "mkdir -p /opt/airflow/data/dbt/logs "
+            "/opt/airflow/data/dbt/target "
+            "/opt/airflow/data/dbt/packages && "
             "cd /opt/airflow/dbt_project && "
             "/home/airflow/.local/bin/dbt run "
             "--profiles-dir /opt/airflow/dbt_project "
@@ -111,19 +122,24 @@ with DAG(
             "formatted.lmsys_formatted "
             "combined.llm_value_scores"
         ),
-        env={"LLM_TRACKER_RUN_DATE": "{{ ds }}"},
+        env=DBT_RUN_ENV,
+        append_env=True,
         doc_md="Runs DBT models to normalize both sources and compute the final value score table.",
     )
 
     t4_dbt_test = BashOperator(
         task_id="dbt_test",
         bash_command=(
+            "mkdir -p /opt/airflow/data/dbt/logs "
+            "/opt/airflow/data/dbt/target "
+            "/opt/airflow/data/dbt/packages && "
             "cd /opt/airflow/dbt_project && "
             "/home/airflow/.local/bin/dbt test "
             "--profiles-dir /opt/airflow/dbt_project "
             "--project-dir /opt/airflow/dbt_project"
         ),
-        env={"LLM_TRACKER_RUN_DATE": "{{ ds }}"},
+        env=DBT_RUN_ENV,
+        append_env=True,
         doc_md="Runs DBT tests for the current partition.",
     )
 

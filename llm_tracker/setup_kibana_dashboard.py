@@ -60,14 +60,20 @@ def kibana_request(method: str, path: str, payload: dict | None = None) -> dict:
 
 def check_connections() -> tuple[int, str]:
     cluster = request_json("GET", f"{ELASTICSEARCH_URL}/_cluster/health")
-    count = request_json("GET", f"{ELASTICSEARCH_URL}/{INDEX_NAME}/_count")
     status = request_json("GET", f"{KIBANA_URL}/api/status")
+    try:
+        count = request_json("GET", f"{ELASTICSEARCH_URL}/{INDEX_NAME}/_count")
+        document_count = count["count"]
+    except urllib.error.HTTPError as exc:
+        if exc.code != 404:
+            raise
+        document_count = 0
 
     overall = status["status"]["overall"]["level"]
     if overall != "available":
         raise RuntimeError(f"Kibana is not ready yet: {overall}")
 
-    return count["count"], cluster["status"]
+    return document_count, cluster["status"]
 
 
 def ensure_data_view() -> None:

@@ -11,4 +11,8 @@ COPY indexing /opt/airflow/indexing
 COPY kibana /opt/airflow/kibana
 COPY setup_kibana_dashboard.py /opt/airflow/setup_kibana_dashboard.py
 
-RUN mkdir -p /opt/airflow/data
+RUN mkdir -p /opt/airflow/data /opt/airflow/dbt_project/logs /opt/airflow/dbt_project/target \
+ && chown -R airflow:0 /opt/airflow/dags /opt/airflow/ingestion /opt/airflow/dbt_project \
+    /opt/airflow/indexing /opt/airflow/kibana /opt/airflow/setup_kibana_dashboard.py /opt/airflow/data \
+ && chmod -R g=u /opt/airflow/dags /opt/airflow/ingestion /opt/airflow/dbt_project \
+    /opt/airflow/indexing /opt/airflow/kibana /opt/airflow/data
