@@ -1,7 +1,5 @@
 FROM apache/airflow:2.8.1-python3.11
 
-USER root
-
 COPY requirements-airflow.txt /requirements-airflow.txt
 
 RUN pip install --no-cache-dir -r /requirements-airflow.txt
@@ -12,6 +10,8 @@ COPY dbt_project /opt/airflow/dbt_project
 COPY indexing /opt/airflow/indexing
 COPY kibana /opt/airflow/kibana
 COPY setup_kibana_dashboard.py /opt/airflow/setup_kibana_dashboard.py
+
+USER root
 
 RUN mkdir -p /opt/airflow/data /opt/airflow/dbt_project/logs /opt/airflow/dbt_project/target \
  && chown -R airflow:0 /opt/airflow/dags /opt/airflow/ingestion /opt/airflow/dbt_project \
