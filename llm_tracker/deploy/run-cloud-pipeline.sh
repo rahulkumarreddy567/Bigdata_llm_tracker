@@ -19,19 +19,36 @@ source "$ENV_FILE"
 set +a
 
 RUN_STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
-LOGICAL_DATE="$(date -u +%Y-%m-%dT%H:%M:%S+00:00)"
 RUN_ID="manual_cli__${RUN_STAMP}"
 
 echo "Triggering DAG '${DAG_ID}'..."
 docker compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE" exec -T airflow-webserver \
-  airflow dags trigger "$DAG_ID" --run-id "$RUN_ID" --logical-date "$LOGICAL_DATE"
+  airflow dags trigger "$DAG_ID" --run-id "$RUN_ID"
 
 echo "Waiting for DAG run to finish..."
 deadline=$(( $(date +%s) + WAIT_SECONDS ))
 
 while true; do
   state="$(docker compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE" exec -T airflow-webserver \
-    airflow dags state "$DAG_ID" "$LOGICAL_DATE" | tr -d '\r' | tail -n 1 | xargs)"
+    python - <<PY
+import json
+import subprocess
+
+run_id = "${RUN_ID}"
+result = subprocess.run(
+    ["airflow", "dags", "list-runs", "-d", "${DAG_ID}", "-o", "json"],
+    capture_output=True,
+    text=True,
+    check=True,
+)
+
+payload = json.loads(result.stdout or "[]")
+for item in payload:
+    if item.get("run_id") == run_id:
+        print(item.get("state", ""))
+        break
+PY
+    | tr -d '\r' | tail -n 1 | xargs)"
 
   if [[ "$state" == "success" ]]; then
     echo "DAG run succeeded."
