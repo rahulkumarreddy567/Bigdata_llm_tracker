@@ -5,6 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DEPLOY_DIR="$ROOT_DIR/deploy"
 COMPOSE_FILE="$DEPLOY_DIR/docker-compose.cloud.yml"
 ENV_FILE="$DEPLOY_DIR/.env.cloud"
+CHECK_SCRIPT="$DEPLOY_DIR/check-cloud-stack.sh"
 
 if [[ ! -f "$ENV_FILE" ]]; then
   echo "Missing $ENV_FILE"
@@ -35,7 +36,11 @@ docker compose -f "$COMPOSE_FILE" --env-file "$ENV_FILE" exec -T airflow-webserv
   env KIBANA_URL=http://kibana:5601 ELASTICSEARCH_URL=http://elasticsearch:9200 \
   python /opt/airflow/setup_kibana_dashboard.py
 
+bash "$CHECK_SCRIPT"
+
 echo
 echo "Cloud stack is up."
 echo "Airflow: http://localhost:${AIRFLOW_WEB_PORT:-8080}"
 echo "Kibana:  http://localhost:${KIBANA_WEB_PORT:-5601}"
+echo "Check:   bash $CHECK_SCRIPT"
+echo "Run DAG: bash $DEPLOY_DIR/run-cloud-pipeline.sh"
