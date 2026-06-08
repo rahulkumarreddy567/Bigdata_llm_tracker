@@ -1,0 +1,175 @@
+# 📋 KIBANA DASHBOARD - QUICK REFERENCE CARD
+
+## 🎯 CREATE DASHBOARD IN 10 MINUTES
+
+### Prerequisites
+- ✅ Kibana running: http://localhost:5601
+- ✅ Data view created: "LLM Value Scores"
+- ✅ 674 documents indexed
+
+### Quick Steps
+
+**Step 1**: http://localhost:5601 → ☰ Menu → Dashboards
+
+**Step 2**: + Create new dashboard
+
+**Step 3**: Name: "LLM Value Analysis" → Create
+
+**Step 4**: + Add → Select visualization type
+
+**Step 5**: Configure → Save → Add to dashboard
+
+**Step 6**: Repeat Steps 4-5 for each visualization
+
+**Step 7**: Save dashboard
+
+---
+
+## 📊 VISUALIZATION CHEAT SHEET
+
+### 1. Table (Top Models)
+```
+Type: Table
+Field: model_name, provider, performance_score, value_score
+Sort: value_score descending
+Limit: 10 rows
+Time: 3 min
+```
+
+### 2. Pie Chart (Provider Share)
+```
+Type: Pie
+Breakdown: provider
+Metric: Count
+Time: 3 min
+```
+
+### 3. Metric Cards (Key Numbers)
+```
+Type: Metric
+Cards:
+  - Count (total models)
+  - Avg performance_score
+  - Avg avg_price_per_1m_usd
+  - Max value_score
+Time: 5 min
+```
+
+### 4. Bar Chart (Top Performers)
+```
+Type: Bar
+X-axis: performance_score (average)
+Y-axis: model_name (top 15)
+Time: 5 min
+```
+
+### 5. Scatter Plot (Cost vs Perf)
+```
+Type: Scatter
+X-axis: avg_price_per_1m_usd
+Y-axis: performance_score
+Color: provider
+Time: 5 min
+```
+
+### 6. Histogram (Price Range)
+```
+Type: Histogram
+Field: avg_price_per_1m_usd
+Time: 3 min
+```
+
+### 7. Histogram (Value Range)
+```
+Type: Histogram
+Field: value_score
+Time: 3 min
+```
+
+---
+
+## 🎨 TOTAL TIME REQUIRED
+
+| Task | Time |
+|------|------|
+| Create dashboard | 1 min |
+| Add 7 visualizations | 30 min |
+| Arrange layout | 5 min |
+| Add filters | 5 min |
+| Save & configure | 2 min |
+| **TOTAL** | **~45 min** |
+
+---
+
+## 🔧 COMMON ACTIONS
+
+### Add Filter
+```
+1. Click: + Filter
+2. Select: Field (provider, performance_score, etc.)
+3. Choose: Condition
+4. Apply: Updates all visualizations
+```
+
+### Export to PDF
+```
+1. Menu (⋮) → Export
+2. Choose: PDF
+3. Select: All dashboards/pages
+4. Download: PDF file
+```
+
+### Share Dashboard
+```
+1. Menu (⋮) → Share
+2. Copy: Share link
+3. Send: To team members
+4. Access: View-only or edit
+```
+
+### Refresh Rate
+```
+1. Menu (⋮) → Refresh settings
+2. Options: Manual, 5s, 1m, 5m, 30m
+3. Select: Desired rate
+```
+
+---
+
+## 📊 YOUR DATA SUMMARY
+
+```
+Total Models:       674
+Data Fields:        8
+Key Metric:         value_score (performance/cost)
+Time Field:         ingestion_date
+Index Status:       ✅ Healthy
+Kibana Status:      ✅ Ready
+```
+
+---
+
+## ✅ FINAL CHECKLIST
+
+- [ ] Dashboard created and named
+- [ ] 7+ visualizations added
+- [ ] Layout organized
+- [ ] Filters configured
+- [ ] Dashboard saved
+- [ ] Can export to PDF
+- [ ] Can refresh data
+- [ ] Can share with team
+
+---
+
+## 🚀 START NOW
+
+**Go to**: http://localhost:5601/app/dashboards
+
+**Click**: + Create new dashboard
+
+**Done in**: 45 minutes
+
+---
+
+**Happy dashboarding! 📊**

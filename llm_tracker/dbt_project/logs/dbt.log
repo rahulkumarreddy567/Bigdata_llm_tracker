@@ -15272,3 +15272,2380 @@ having count(*) > 1
 [0m21:08:00.912370 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b1dd36f50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b21ba7710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9b21a31f50>]}
 [0m21:08:00.914641 [debug] [MainThread]: Flushing usage events
 [0m21:08:09.424698 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m22:18:01.261001 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92e743ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92e7926d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92f928f50>]}
+
+
+============================== 22:18:01.270189 | f7f1f060-612c-4f4d-ae36-7c379c765456 ==============================
+[0m22:18:01.270189 [info ] [MainThread]: Running with dbt=1.7.19
+[0m22:18:01.272814 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'profiles_dir': '/opt/airflow/dbt_project', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir /opt/airflow/dbt_project --project-dir /opt/airflow/dbt_project --select formatted.openrouter_formatted formatted.lmsys_formatted combined.llm_value_scores', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:18:02.058848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f7f1f060-612c-4f4d-ae36-7c379c765456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92e668850>]}
+[0m22:18:02.232009 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f7f1f060-612c-4f4d-ae36-7c379c765456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92e656fd0>]}
+[0m22:18:02.235632 [info ] [MainThread]: Registered adapter: duckdb=1.7.2
+[0m22:18:02.262635 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m22:18:02.793651 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:18:02.795888 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:18:02.805939 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f7f1f060-612c-4f4d-ae36-7c379c765456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92e5dfc10>]}
+[0m22:18:02.903447 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f7f1f060-612c-4f4d-ae36-7c379c765456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa9235d1850>]}
+[0m22:18:02.908739 [info ] [MainThread]: Found 3 models, 10 tests, 0 sources, 0 exposures, 0 metrics, 391 macros, 0 groups, 0 semantic models
+[0m22:18:02.913813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f7f1f060-612c-4f4d-ae36-7c379c765456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92e5dcb90>]}
+[0m22:18:02.921246 [info ] [MainThread]: 
+[0m22:18:02.927613 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:18:02.937274 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_llm_tracker'
+[0m22:18:02.941520 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_llm_tracker'
+[0m22:18:03.025518 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker"
+[0m22:18:03.062787 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker"
+[0m22:18:03.066833 [debug] [ThreadPool]: On list_llm_tracker: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"llm_tracker"'
+    
+  
+  
+[0m22:18:03.073532 [debug] [ThreadPool]: On list_llm_tracker: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"llm_tracker"'
+    
+  
+  
+[0m22:18:03.082910 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:18:03.092499 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:18:03.453710 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:03.454747 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:03.463114 [debug] [ThreadPool]: On list_llm_tracker: Close
+[0m22:18:03.469654 [debug] [ThreadPool]: On list_llm_tracker: Close
+[0m22:18:03.491119 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_llm_tracker, now create_llm_tracker_main_formatted)
+[0m22:18:03.493288 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_llm_tracker, now create_llm_tracker_main_combined)
+[0m22:18:03.498057 [debug] [ThreadPool]: Creating schema "database: "llm_tracker"
+schema: "main_formatted"
+"
+[0m22:18:03.501673 [debug] [ThreadPool]: Creating schema "database: "llm_tracker"
+schema: "main_combined"
+"
+[0m22:18:03.529042 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_formatted"
+[0m22:18:03.534031 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_combined"
+[0m22:18:03.536943 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "create_llm_tracker_main_formatted"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='llm_tracker'
+        and type='sqlite'
+    
+  
+[0m22:18:03.539556 [debug] [ThreadPool]: On create_llm_tracker_main_combined: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "create_llm_tracker_main_combined"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='llm_tracker'
+        and type='sqlite'
+    
+  
+[0m22:18:03.542439 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:18:03.545924 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:18:03.686629 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:03.691811 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_combined"
+[0m22:18:03.696123 [debug] [ThreadPool]: On create_llm_tracker_main_combined: BEGIN
+[0m22:18:03.716983 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:03.719579 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_combined"
+[0m22:18:03.721808 [debug] [ThreadPool]: On create_llm_tracker_main_combined: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "create_llm_tracker_main_combined"} */
+
+    
+    
+        create schema if not exists "llm_tracker"."main_combined"
+    
+[0m22:18:03.727125 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:03.732888 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_formatted"
+[0m22:18:03.736136 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: BEGIN
+[0m22:18:03.740003 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:03.745026 [debug] [ThreadPool]: On create_llm_tracker_main_combined: COMMIT
+[0m22:18:03.748044 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_combined"
+[0m22:18:03.750488 [debug] [ThreadPool]: On create_llm_tracker_main_combined: COMMIT
+[0m22:18:03.754736 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:03.757161 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_formatted"
+[0m22:18:03.760878 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "create_llm_tracker_main_formatted"} */
+
+    
+    
+        create schema if not exists "llm_tracker"."main_formatted"
+    
+[0m22:18:03.777846 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:03.778371 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:03.781163 [debug] [ThreadPool]: On create_llm_tracker_main_combined: Close
+[0m22:18:03.783776 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: COMMIT
+[0m22:18:03.788761 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_formatted"
+[0m22:18:03.791104 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: COMMIT
+[0m22:18:03.809359 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:03.811339 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: Close
+[0m22:18:04.709760 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_llm_tracker_main_combined, now list_llm_tracker_main_formatted)
+[0m22:18:04.711273 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_llm_tracker_main_formatted, now list_llm_tracker_main_combined)
+[0m22:18:04.718483 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_formatted"
+[0m22:18:04.721244 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_combined"
+[0m22:18:04.726365 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: BEGIN
+[0m22:18:04.728217 [debug] [ThreadPool]: On list_llm_tracker_main_combined: BEGIN
+[0m22:18:04.730903 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:18:04.733699 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:18:04.809412 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:04.810377 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:04.812102 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_combined"
+[0m22:18:04.815393 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_formatted"
+[0m22:18:04.817973 [debug] [ThreadPool]: On list_llm_tracker_main_combined: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker_main_combined"} */
+select
+      'llm_tracker' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_combined'
+    and table_catalog = 'llm_tracker'
+  
+[0m22:18:04.820170 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker_main_formatted"} */
+select
+      'llm_tracker' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_formatted'
+    and table_catalog = 'llm_tracker'
+  
+[0m22:18:04.930678 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:04.958828 [debug] [ThreadPool]: On list_llm_tracker_main_combined: ROLLBACK
+[0m22:18:04.984727 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:04.989428 [debug] [ThreadPool]: Failed to rollback 'list_llm_tracker_main_combined'
+[0m22:18:04.992326 [debug] [ThreadPool]: On list_llm_tracker_main_combined: Close
+[0m22:18:05.026173 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: ROLLBACK
+[0m22:18:05.028403 [debug] [ThreadPool]: Failed to rollback 'list_llm_tracker_main_formatted'
+[0m22:18:05.032857 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: Close
+[0m22:18:05.045538 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f7f1f060-612c-4f4d-ae36-7c379c765456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92e5f3b90>]}
+[0m22:18:05.048551 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:18:05.051970 [debug] [MainThread]: On master: BEGIN
+[0m22:18:05.054214 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:18:05.109370 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:18:05.113332 [debug] [MainThread]: On master: COMMIT
+[0m22:18:05.116048 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:18:05.118289 [debug] [MainThread]: On master: COMMIT
+[0m22:18:05.123199 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:18:05.127612 [debug] [MainThread]: On master: Close
+[0m22:18:05.134752 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m22:18:05.137130 [info ] [MainThread]: 
+[0m22:18:06.944152 [debug] [Thread-1 (]: Began running node model.llm_tracker.lmsys_formatted
+[0m22:18:06.945818 [debug] [Thread-2 (]: Began running node model.llm_tracker.openrouter_formatted
+[0m22:18:06.949282 [info ] [Thread-1 (]: 1 of 3 START sql table model main_formatted.lmsys_formatted .................... [RUN]
+[0m22:18:06.953532 [info ] [Thread-2 (]: 2 of 3 START sql table model main_formatted.openrouter_formatted ............... [RUN]
+[0m22:18:06.959020 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.llm_tracker.lmsys_formatted'
+[0m22:18:06.964165 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.llm_tracker.openrouter_formatted'
+[0m22:18:06.970009 [debug] [Thread-1 (]: Began compiling node model.llm_tracker.lmsys_formatted
+[0m22:18:06.975230 [debug] [Thread-2 (]: Began compiling node model.llm_tracker.openrouter_formatted
+[0m22:18:07.003811 [debug] [Thread-1 (]: Writing injected SQL for node "model.llm_tracker.lmsys_formatted"
+[0m22:18:07.012125 [debug] [Thread-2 (]: Writing injected SQL for node "model.llm_tracker.openrouter_formatted"
+[0m22:18:07.036526 [debug] [Thread-2 (]: Timing info for model.llm_tracker.openrouter_formatted (compile): 22:18:07.004510 => 22:18:07.035798
+[0m22:18:07.041295 [debug] [Thread-2 (]: Began executing node model.llm_tracker.openrouter_formatted
+[0m22:18:07.046638 [debug] [Thread-1 (]: Timing info for model.llm_tracker.lmsys_formatted (compile): 22:18:06.979595 => 22:18:07.045606
+[0m22:18:07.143254 [debug] [Thread-1 (]: Began executing node model.llm_tracker.lmsys_formatted
+[0m22:18:07.215873 [debug] [Thread-2 (]: Writing runtime sql for node "model.llm_tracker.openrouter_formatted"
+[0m22:18:07.225026 [debug] [Thread-1 (]: Writing runtime sql for node "model.llm_tracker.lmsys_formatted"
+[0m22:18:07.245147 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:18:07.248645 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: BEGIN
+[0m22:18:07.249496 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:18:07.251528 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:18:07.254598 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: BEGIN
+[0m22:18:07.447928 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:07.450009 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:18:07.453614 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:18:07.460344 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:07.465810 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.openrouter_formatted"} */
+
+  
+    
+    
+
+    create  table
+      "llm_tracker"."main_formatted"."openrouter_formatted__dbt_tmp"
+  
+    as (
+      
+
+-- =============================================================
+-- Model: openrouter_formatted
+-- Layer: formatted
+-- Description: Normalize OpenRouter raw JSON into clean typed
+--              columns. Prices converted to USD per 1M tokens
+--              and EUR per 1M tokens.
+-- =============================================================
+
+WITH raw_file AS (
+    SELECT
+        json_extract_string(model, '$.id')                          AS model_id,
+        json_extract_string(model, '$.name')                        AS model_name,
+        json_extract_string(model, '$.pricing.prompt')              AS price_prompt_raw,
+        json_extract_string(model, '$.pricing.completion')          AS price_completion_raw,
+        TRY_CAST(json_extract(model, '$.context_length') AS INTEGER) AS context_length,
+        json_extract_string(model, '$.description')                 AS description,
+        json_extract_string(model, '$.architecture.modality')       AS modality,
+        json_extract_string(model, '$.top_provider.is_moderated')   AS is_moderated
+    FROM read_json_auto(
+        '/opt/airflow/data/raw/openrouter/' ||
+        '2026-06-07' ||
+        '/models.json',
+        format='auto'
+    ) f
+    CROSS JOIN UNNEST(f.models::JSON[]) AS t(model)
+),
+
+cleaned AS (
+    SELECT
+        TRIM(model_id)                                              AS model_id,
+        TRIM(model_name)                                            AS model_name,
+
+        -- Provider extracted from model_id prefix e.g. "openai/gpt-4o" → "openai"
+        SPLIT_PART(TRIM(model_id), '/', 1)                         AS provider,
+
+        -- Slug: last part of model_id for joining
+        LOWER(SPLIT_PART(TRIM(model_id), '/', 2))                  AS model_slug,
+
+        -- Price per token → price per 1M tokens (USD)
+        ROUND(TRY_CAST(price_prompt_raw     AS DOUBLE) * 1e6, 6)   AS price_prompt_per_1m_usd,
+        ROUND(TRY_CAST(price_completion_raw AS DOUBLE) * 1e6, 6)   AS price_completion_per_1m_usd,
+
+        -- Average price per 1M tokens USD
+        ROUND(
+            (TRY_CAST(price_prompt_raw AS DOUBLE) +
+             TRY_CAST(price_completion_raw AS DOUBLE)) / 2.0 * 1e6,
+            6
+        )                                                           AS avg_price_per_1m_usd,
+
+        -- Convert to EUR (1 USD ≈ 0.92 EUR as of 2024)
+        ROUND(
+            (TRY_CAST(price_prompt_raw AS DOUBLE) +
+             TRY_CAST(price_completion_raw AS DOUBLE)) / 2.0 * 1e6 * 0.92,
+            6
+        )                                                           AS avg_price_per_1m_eur,
+
+        COALESCE(context_length, 0)                                 AS context_length,
+        COALESCE(TRIM(modality), 'text->text')                     AS modality,
+
+        -- Ingestion metadata
+        '2026-06-07'                                            AS ingestion_date,
+        CURRENT_TIMESTAMP                                           AS processed_at_utc
+
+    FROM raw_file
+    WHERE model_id IS NOT NULL
+      AND price_prompt_raw IS NOT NULL
+      AND price_completion_raw IS NOT NULL
+      AND TRY_CAST(price_prompt_raw     AS DOUBLE) IS NOT NULL
+      AND TRY_CAST(price_completion_raw AS DOUBLE) IS NOT NULL
+      AND TRY_CAST(price_prompt_raw     AS DOUBLE) >= 0
+      AND TRY_CAST(price_completion_raw AS DOUBLE) >= 0
+)
+
+SELECT * FROM cleaned
+    );
+  
+  
+[0m22:18:07.471302 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:18:07.477789 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.lmsys_formatted"} */
+
+  
+    
+    
+
+    create  table
+      "llm_tracker"."main_formatted"."lmsys_formatted__dbt_tmp"
+  
+    as (
+      
+
+-- =============================================================
+-- Model: lmsys_formatted
+-- Layer: formatted
+-- Description: Normalize LMSYS Chatbot Arena rankings into
+--              clean typed columns with composite quality score.
+-- =============================================================
+
+WITH raw_file AS (
+    SELECT
+        json_extract_string(row_data, '$.key')                      AS model_key,
+        json_extract_string(row_data, '$.Model')                    AS model_name,
+        json_extract_string(row_data, '$.Arena Elo rating')         AS elo_raw,
+        json_extract_string(row_data, '$."MT-bench (score)"')       AS mt_bench_raw,
+        json_extract_string(row_data, '$.MMLU')                     AS mmlu_raw,
+        json_extract_string(row_data, '$.License')                  AS license,
+        json_extract_string(row_data, '$."Knowledge cutoff date"')  AS knowledge_cutoff
+    FROM read_json_auto(
+        '/opt/airflow/data/raw/lmsys/' ||
+        '2026-06-07' ||
+        '/rankings.json',
+        format='auto'
+    ) f
+    CROSS JOIN UNNEST(f.rankings::JSON[]) AS t(row_data)
+),
+
+normalized AS (
+    SELECT
+        LOWER(TRIM(model_key))                                          AS model_key,
+        TRIM(model_name)                                                AS model_name,
+
+        -- ELO score (numeric, higher = better)
+        CASE
+            WHEN elo_raw IS NULL OR elo_raw = '-' THEN NULL
+            ELSE ROUND(TRY_CAST(elo_raw AS DOUBLE), 2)
+        END                                                             AS elo_score,
+
+        -- MT-Bench 0–10
+        CASE
+            WHEN mt_bench_raw IS NULL OR mt_bench_raw = '-' THEN NULL
+            ELSE ROUND(TRY_CAST(mt_bench_raw AS DOUBLE), 2)
+        END                                                             AS mt_bench_score,
+
+        -- MMLU 0–100
+        CASE
+            WHEN mmlu_raw IS NULL OR mmlu_raw = '-' THEN NULL
+            ELSE ROUND(TRY_CAST(mmlu_raw AS DOUBLE), 2)
+        END                                                             AS mmlu_score,
+
+        -- Composite quality score (0–1 normalized)
+        -- Weights: ELO 50%, MT-Bench 30%, MMLU 20%
+        ROUND(
+            COALESCE(
+                CASE WHEN elo_raw IS NOT NULL AND elo_raw != '-'
+                     THEN LEAST(GREATEST((TRY_CAST(elo_raw AS DOUBLE) - 800.0) / 600.0, 0), 1)
+                     ELSE 0.5 END, 0.5
+            ) * 0.5
+            +
+            COALESCE(
+                CASE WHEN mt_bench_raw IS NOT NULL AND mt_bench_raw != '-'
+                     THEN TRY_CAST(mt_bench_raw AS DOUBLE) / 10.0
+                     ELSE 0.5 END, 0.5
+            ) * 0.3
+            +
+            COALESCE(
+                CASE WHEN mmlu_raw IS NOT NULL AND mmlu_raw != '-'
+                     THEN TRY_CAST(mmlu_raw AS DOUBLE) / 100.0
+                     ELSE 0.5 END, 0.5
+            ) * 0.2,
+            4
+        )                                                               AS quality_score_normalized,
+
+        COALESCE(TRIM(license), 'unknown')                             AS license,
+        knowledge_cutoff,
+
+        -- Ingestion metadata
+        '2026-06-07'                                                AS ingestion_date,
+        CURRENT_TIMESTAMP                                               AS processed_at_utc
+
+    FROM raw_file
+    WHERE model_name IS NOT NULL
+)
+
+SELECT * FROM normalized
+    );
+  
+  
+[0m22:18:07.699713 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:07.712518 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:18:07.715502 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.lmsys_formatted"} */
+alter table "llm_tracker"."main_formatted"."lmsys_formatted" rename to "lmsys_formatted__dbt_backup"
+[0m22:18:07.719467 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:07.726554 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:18:07.728869 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.lmsys_formatted"} */
+alter table "llm_tracker"."main_formatted"."lmsys_formatted__dbt_tmp" rename to "lmsys_formatted"
+[0m22:18:07.732819 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:07.762499 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: COMMIT
+[0m22:18:07.764831 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:18:07.768282 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: COMMIT
+[0m22:18:07.814467 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:07.834062 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:18:07.839926 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.lmsys_formatted"} */
+drop table if exists "llm_tracker"."main_formatted"."lmsys_formatted__dbt_backup" cascade
+[0m22:18:07.853730 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:07.859581 [debug] [Thread-1 (]: Timing info for model.llm_tracker.lmsys_formatted (execute): 22:18:07.162169 => 22:18:07.859119
+[0m22:18:07.862308 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: Close
+[0m22:18:07.867345 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f7f1f060-612c-4f4d-ae36-7c379c765456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa923491390>]}
+[0m22:18:07.870515 [info ] [Thread-1 (]: 1 of 3 OK created sql table model main_formatted.lmsys_formatted ............... [[32mOK[0m in 0.91s]
+[0m22:18:07.874873 [debug] [Thread-1 (]: Finished running node model.llm_tracker.lmsys_formatted
+[0m22:18:07.936291 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43e9f45f50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43e9f96490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43e9f47910>]}
+
+
+============================== 22:18:07.964167 | 3e566424-7511-4318-911a-0f9a5d95aff0 ==============================
+[0m22:18:07.964167 [info ] [MainThread]: Running with dbt=1.7.19
+[0m22:18:07.969119 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'log_path': '/opt/airflow/dbt_project/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --profiles-dir /opt/airflow/dbt_project --project-dir /opt/airflow/dbt_project --select formatted.openrouter_formatted formatted.lmsys_formatted combined.llm_value_scores', 'send_anonymous_usage_stats': 'True'}
+[0m22:18:09.425959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3e566424-7511-4318-911a-0f9a5d95aff0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43e9fcc950>]}
+[0m22:18:09.730432 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3e566424-7511-4318-911a-0f9a5d95aff0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43eb23c750>]}
+[0m22:18:09.738381 [info ] [MainThread]: Registered adapter: duckdb=1.7.2
+[0m22:18:09.791395 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m22:18:10.639919 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:18:10.642317 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:18:10.671906 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3e566424-7511-4318-911a-0f9a5d95aff0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43e9fddbd0>]}
+[0m22:18:10.944686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3e566424-7511-4318-911a-0f9a5d95aff0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43dedb9050>]}
+[0m22:18:10.947552 [info ] [MainThread]: Found 3 models, 10 tests, 0 sources, 0 exposures, 0 metrics, 391 macros, 0 groups, 0 semantic models
+[0m22:18:10.951593 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3e566424-7511-4318-911a-0f9a5d95aff0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43e6cd6250>]}
+[0m22:18:10.966688 [info ] [MainThread]: 
+[0m22:18:10.972117 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:18:10.979506 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_llm_tracker'
+[0m22:18:10.981764 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_llm_tracker'
+[0m22:18:11.021410 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker"
+[0m22:18:11.024653 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker"
+[0m22:18:11.026867 [debug] [ThreadPool]: On list_llm_tracker: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"llm_tracker"'
+    
+  
+  
+[0m22:18:11.028801 [debug] [ThreadPool]: On list_llm_tracker: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"llm_tracker"'
+    
+  
+  
+[0m22:18:11.032338 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:18:11.034727 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:18:11.194677 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:18:11.196805 [debug] [MainThread]: Connection 'list_llm_tracker' was properly closed.
+[0m22:18:11.199464 [debug] [MainThread]: Connection 'list_llm_tracker' was properly closed.
+[0m22:18:11.202519 [info ] [MainThread]: 
+[0m22:18:11.207261 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.23 seconds (0.23s).
+[0m22:18:11.209825 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Could not set lock on file "/opt/airflow/data/llm_tracker.duckdb": Conflicting lock is held in /usr/local/bin/python3.11 (PID 1944). See also https://duckdb.org/docs/connect/concurrency
+[0m22:18:11.218827 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 3.4759037, "process_user_time": 5.045546, "process_kernel_time": 4.644334, "process_mem_max_rss": "147360", "process_in_blocks": "6192", "command_success": false, "process_out_blocks": "0"}
+[0m22:18:11.224655 [debug] [MainThread]: Command `dbt run` failed at 22:18:11.224120 after 3.48 seconds
+[0m22:18:11.227912 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43e9f52110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43e6d5a5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f43ded90250>]}
+[0m22:18:11.230622 [debug] [MainThread]: Flushing usage events
+[0m22:18:12.931322 [debug] [Thread-2 (]: SQL status: OK in 5.0 seconds
+[0m22:18:12.984361 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:18:12.986476 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.openrouter_formatted"} */
+alter table "llm_tracker"."main_formatted"."openrouter_formatted" rename to "openrouter_formatted__dbt_backup"
+[0m22:18:12.992547 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:12.999100 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:18:13.001487 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.openrouter_formatted"} */
+alter table "llm_tracker"."main_formatted"."openrouter_formatted__dbt_tmp" rename to "openrouter_formatted"
+[0m22:18:13.004297 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:13.013392 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: COMMIT
+[0m22:18:13.015645 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:18:13.017586 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: COMMIT
+[0m22:18:13.033334 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:13.038850 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:18:13.041976 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.openrouter_formatted"} */
+drop table if exists "llm_tracker"."main_formatted"."openrouter_formatted__dbt_backup" cascade
+[0m22:18:13.049324 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:13.056448 [debug] [Thread-2 (]: Timing info for model.llm_tracker.openrouter_formatted (execute): 22:18:07.048458 => 22:18:13.055121
+[0m22:18:13.058670 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: Close
+[0m22:18:13.153523 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f7f1f060-612c-4f4d-ae36-7c379c765456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92330bf90>]}
+[0m22:18:13.158603 [info ] [Thread-2 (]: 2 of 3 OK created sql table model main_formatted.openrouter_formatted .......... [[32mOK[0m in 6.19s]
+[0m22:18:13.161605 [debug] [Thread-2 (]: Finished running node model.llm_tracker.openrouter_formatted
+[0m22:18:13.176281 [debug] [Thread-1 (]: Began running node model.llm_tracker.llm_value_scores
+[0m22:18:13.179006 [info ] [Thread-1 (]: 3 of 3 START sql table model main_combined.llm_value_scores .................... [RUN]
+[0m22:18:13.184203 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.llm_tracker.lmsys_formatted, now model.llm_tracker.llm_value_scores)
+[0m22:18:13.187355 [debug] [Thread-1 (]: Began compiling node model.llm_tracker.llm_value_scores
+[0m22:18:13.211357 [debug] [Thread-1 (]: Writing injected SQL for node "model.llm_tracker.llm_value_scores"
+[0m22:18:13.231795 [debug] [Thread-1 (]: Timing info for model.llm_tracker.llm_value_scores (compile): 22:18:13.189235 => 22:18:13.231387
+[0m22:18:13.233742 [debug] [Thread-1 (]: Began executing node model.llm_tracker.llm_value_scores
+[0m22:18:13.242846 [debug] [Thread-1 (]: Writing runtime sql for node "model.llm_tracker.llm_value_scores"
+[0m22:18:13.260272 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:18:13.262616 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: BEGIN
+[0m22:18:13.264827 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:18:13.312498 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:13.314264 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:18:13.316124 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.llm_value_scores"} */
+
+  
+    
+    
+
+    create  table
+      "llm_tracker"."main_combined"."llm_value_scores__dbt_tmp"
+  
+    as (
+      -- =============================================================
+-- Model: llm_value_scores
+-- Layer: combined
+-- Description: JOIN OpenRouter pricing + LMSYS quality rankings.
+--              Computes Value Score = quality / cost_per_1M_EUR.
+--              This is the core business output of the pipeline.
+-- =============================================================
+
+WITH pricing AS (
+    SELECT * FROM "llm_tracker"."main_formatted"."openrouter_formatted"
+),
+
+quality AS (
+    SELECT * FROM "llm_tracker"."main_formatted"."lmsys_formatted"
+),
+
+-- ── Join Strategy ──────────────────────────────────────────────────────────────
+-- OpenRouter model_id: "openai/gpt-4o"  → model_slug: "gpt-4o"
+-- LMSYS model_key:     "gpt-4o"
+-- Match on slug exact OR partial containment
+joined AS (
+    SELECT
+        p.model_id,
+        p.model_name                                AS openrouter_name,
+        p.provider,
+        p.model_slug,
+        p.price_prompt_per_1m_usd,
+        p.price_completion_per_1m_usd,
+        p.avg_price_per_1m_usd,
+        p.avg_price_per_1m_eur,
+        p.context_length,
+        p.modality,
+        q.model_name                                AS lmsys_name,
+        q.elo_score,
+        q.mt_bench_score,
+        q.mmlu_score,
+        q.quality_score_normalized,
+        q.license,
+        q.knowledge_cutoff,
+        p.ingestion_date,
+        p.processed_at_utc
+
+    FROM pricing p
+    LEFT JOIN quality q
+        ON p.model_slug = q.model_key
+        OR p.model_slug LIKE '%' || q.model_key || '%'
+        OR q.model_key  LIKE '%' || p.model_slug || '%'
+),
+
+-- ── Value Score Calculation ────────────────────────────────────────────────────
+scored AS (
+    SELECT
+        model_id,
+        openrouter_name                             AS model_name,
+        provider,
+        model_slug,
+        lmsys_name,
+
+        -- Pricing columns
+        price_prompt_per_1m_usd,
+        price_completion_per_1m_usd,
+        avg_price_per_1m_usd,
+        avg_price_per_1m_eur,
+        context_length,
+        modality,
+
+        -- Quality columns
+        elo_score,
+        mt_bench_score,
+        mmlu_score,
+        quality_score_normalized,
+        license,
+        knowledge_cutoff,
+
+        -- ── VALUE SCORE (core metric) ─────────────────────────────────────────
+        -- Higher = better quality per euro spent
+        CASE
+            WHEN quality_score_normalized IS NOT NULL
+             AND avg_price_per_1m_eur > 0
+                THEN ROUND(quality_score_normalized / avg_price_per_1m_eur, 6)
+            WHEN avg_price_per_1m_eur = 0
+                THEN 999.999   -- free models get maximum value score
+            ELSE NULL
+        END                                         AS value_score,
+
+        -- ── Price tier classification ─────────────────────────────────────────
+        CASE
+            WHEN avg_price_per_1m_usd = 0          THEN 'free'
+            WHEN avg_price_per_1m_usd < 0.5        THEN 'budget'
+            WHEN avg_price_per_1m_usd < 5.0        THEN 'mid'
+            WHEN avg_price_per_1m_usd < 20.0       THEN 'premium'
+            ELSE 'ultra'
+        END                                         AS price_tier,
+
+        -- ── Quality tier classification ───────────────────────────────────────
+        CASE
+            WHEN elo_score IS NULL                 THEN 'unranked'
+            WHEN elo_score >= 1250                 THEN 'elite'
+            WHEN elo_score >= 1150                 THEN 'high'
+            WHEN elo_score >= 1050                 THEN 'medium'
+            ELSE 'low'
+        END                                         AS quality_tier,
+
+        -- ── Has quality data flag ─────────────────────────────────────────────
+        CASE WHEN elo_score IS NOT NULL THEN TRUE ELSE FALSE END
+                                                    AS has_quality_data,
+
+        ingestion_date,
+        processed_at_utc
+
+    FROM joined
+),
+
+-- ── Rank models by value score within each price tier ─────────────────────────
+ranked AS (
+    SELECT
+        *,
+        RANK() OVER (ORDER BY COALESCE(value_score, 0) DESC)           AS global_rank,
+        RANK() OVER (
+            PARTITION BY price_tier
+            ORDER BY COALESCE(value_score, 0) DESC
+        )                                                               AS rank_in_tier,
+        CASE
+            WHEN RANK() OVER (ORDER BY COALESCE(value_score, 0) DESC) <= 10
+            THEN TRUE ELSE FALSE
+        END                                                             AS is_top10_value
+
+    FROM scored
+)
+
+SELECT * FROM ranked
+ORDER BY global_rank ASC
+    );
+  
+  
+[0m22:18:13.404375 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:13.409352 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:18:13.411140 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.llm_value_scores"} */
+alter table "llm_tracker"."main_combined"."llm_value_scores" rename to "llm_value_scores__dbt_backup"
+[0m22:18:13.413066 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:13.417999 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:18:13.419656 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.llm_value_scores"} */
+alter table "llm_tracker"."main_combined"."llm_value_scores__dbt_tmp" rename to "llm_value_scores"
+[0m22:18:13.421927 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:13.425717 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: COMMIT
+[0m22:18:13.427410 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:18:13.429287 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: COMMIT
+[0m22:18:13.447171 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:13.452453 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:18:13.454135 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.llm_value_scores"} */
+drop table if exists "llm_tracker"."main_combined"."llm_value_scores__dbt_backup" cascade
+[0m22:18:13.460963 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:13.465129 [debug] [Thread-1 (]: Timing info for model.llm_tracker.llm_value_scores (execute): 22:18:13.235856 => 22:18:13.464846
+[0m22:18:13.467655 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: Close
+[0m22:18:13.564493 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f7f1f060-612c-4f4d-ae36-7c379c765456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92e794410>]}
+[0m22:18:13.570744 [info ] [Thread-1 (]: 3 of 3 OK created sql table model main_combined.llm_value_scores ............... [[32mOK[0m in 0.38s]
+[0m22:18:13.579183 [debug] [Thread-1 (]: Finished running node model.llm_tracker.llm_value_scores
+[0m22:18:13.594534 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:18:13.597626 [debug] [MainThread]: On master: BEGIN
+[0m22:18:13.600753 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:18:13.685499 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:18:13.689822 [debug] [MainThread]: On master: COMMIT
+[0m22:18:13.693238 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:18:13.698141 [debug] [MainThread]: On master: COMMIT
+[0m22:18:13.713905 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:18:13.721032 [debug] [MainThread]: On master: Close
+[0m22:18:13.738632 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:18:13.749836 [debug] [MainThread]: Connection 'list_llm_tracker_main_formatted' was properly closed.
+[0m22:18:13.762002 [debug] [MainThread]: Connection 'list_llm_tracker_main_combined' was properly closed.
+[0m22:18:13.780471 [debug] [MainThread]: Connection 'model.llm_tracker.llm_value_scores' was properly closed.
+[0m22:18:13.787496 [debug] [MainThread]: Connection 'model.llm_tracker.openrouter_formatted' was properly closed.
+[0m22:18:13.800550 [info ] [MainThread]: 
+[0m22:18:13.818739 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 10.87 seconds (10.87s).
+[0m22:18:13.832238 [debug] [MainThread]: Command end result
+[0m22:18:14.002186 [info ] [MainThread]: 
+[0m22:18:14.010991 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:18:14.017158 [info ] [MainThread]: 
+[0m22:18:14.023524 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m22:18:14.044851 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 12.8653345, "process_user_time": 11.56713, "process_kernel_time": 9.850646, "process_mem_max_rss": "331080", "process_in_blocks": "172344", "process_out_blocks": "0"}
+[0m22:18:14.054100 [debug] [MainThread]: Command `dbt run` succeeded at 22:18:14.052666 after 12.87 seconds
+[0m22:18:14.062747 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa92b53bb90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa932f67890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa9235ed250>]}
+[0m22:18:14.068641 [debug] [MainThread]: Flushing usage events
+[0m22:18:23.440256 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f148d6a27d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f148d6978d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f148d697a10>]}
+
+
+============================== 22:18:23.447739 | 2069fe72-7274-45d3-a111-2e09e1d5cc54 ==============================
+[0m22:18:23.447739 [info ] [MainThread]: Running with dbt=1.7.19
+[0m22:18:23.450460 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'fail_fast': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt test --profiles-dir /opt/airflow/dbt_project --project-dir /opt/airflow/dbt_project', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:18:23.747060 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2069fe72-7274-45d3-a111-2e09e1d5cc54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f148d6e8550>]}
+[0m22:18:23.845398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2069fe72-7274-45d3-a111-2e09e1d5cc54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f14824f8210>]}
+[0m22:18:23.847831 [info ] [MainThread]: Registered adapter: duckdb=1.7.2
+[0m22:18:23.873244 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m22:18:24.483740 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:18:24.485580 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:18:24.493448 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2069fe72-7274-45d3-a111-2e09e1d5cc54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f148d6e7e10>]}
+[0m22:18:24.789014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2069fe72-7274-45d3-a111-2e09e1d5cc54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f14824dcad0>]}
+[0m22:18:24.790901 [info ] [MainThread]: Found 3 models, 10 tests, 0 sources, 0 exposures, 0 metrics, 391 macros, 0 groups, 0 semantic models
+[0m22:18:24.793039 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2069fe72-7274-45d3-a111-2e09e1d5cc54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f148d6a42d0>]}
+[0m22:18:24.796903 [info ] [MainThread]: 
+[0m22:18:24.800768 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:18:24.804591 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_llm_tracker_main_combined'
+[0m22:18:24.806364 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_llm_tracker_main_formatted'
+[0m22:18:24.819880 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_combined"
+[0m22:18:24.822643 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_formatted"
+[0m22:18:24.824479 [debug] [ThreadPool]: On list_llm_tracker_main_combined: BEGIN
+[0m22:18:24.826167 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: BEGIN
+[0m22:18:24.828018 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:18:24.829900 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:18:24.878507 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:24.883902 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_combined"
+[0m22:18:24.884613 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:24.885772 [debug] [ThreadPool]: On list_llm_tracker_main_combined: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker_main_combined"} */
+select
+      'llm_tracker' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_combined'
+    and table_catalog = 'llm_tracker'
+  
+[0m22:18:24.887913 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_formatted"
+[0m22:18:24.894859 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker_main_formatted"} */
+select
+      'llm_tracker' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_formatted'
+    and table_catalog = 'llm_tracker'
+  
+[0m22:18:24.962002 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:24.964335 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:18:24.977294 [debug] [ThreadPool]: On list_llm_tracker_main_combined: ROLLBACK
+[0m22:18:24.978875 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: ROLLBACK
+[0m22:18:24.981387 [debug] [ThreadPool]: Failed to rollback 'list_llm_tracker_main_combined'
+[0m22:18:24.982583 [debug] [ThreadPool]: Failed to rollback 'list_llm_tracker_main_formatted'
+[0m22:18:24.983703 [debug] [ThreadPool]: On list_llm_tracker_main_combined: Close
+[0m22:18:24.985112 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: Close
+[0m22:18:24.994826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2069fe72-7274-45d3-a111-2e09e1d5cc54', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f148e85e110>]}
+[0m22:18:24.996796 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:18:24.998430 [debug] [MainThread]: On master: BEGIN
+[0m22:18:24.999961 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:18:25.033364 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:18:25.035711 [debug] [MainThread]: On master: COMMIT
+[0m22:18:25.038750 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:18:25.040561 [debug] [MainThread]: On master: COMMIT
+[0m22:18:25.043116 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:18:25.044920 [debug] [MainThread]: On master: Close
+[0m22:18:25.049613 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m22:18:25.052190 [info ] [MainThread]: 
+[0m22:18:25.075582 [debug] [Thread-1 (]: Began running node test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db
+[0m22:18:25.076145 [debug] [Thread-2 (]: Began running node test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db
+[0m22:18:25.077716 [info ] [Thread-1 (]: 1 of 10 START test accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra  [RUN]
+[0m22:18:25.079500 [info ] [Thread-2 (]: 2 of 10 START test accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked  [RUN]
+[0m22:18:25.081996 [debug] [Thread-1 (]: Acquiring new duckdb connection 'test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db'
+[0m22:18:25.085087 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db'
+[0m22:18:25.086882 [debug] [Thread-1 (]: Began compiling node test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db
+[0m22:18:25.088787 [debug] [Thread-2 (]: Began compiling node test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db
+[0m22:18:25.109832 [debug] [Thread-1 (]: Writing injected SQL for node "test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db"
+[0m22:18:25.123237 [debug] [Thread-2 (]: Writing injected SQL for node "test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db"
+[0m22:18:25.136529 [debug] [Thread-1 (]: Timing info for test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db (compile): 22:18:25.090286 => 22:18:25.135847
+[0m22:18:25.139295 [debug] [Thread-1 (]: Began executing node test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db
+[0m22:18:25.140537 [debug] [Thread-2 (]: Timing info for test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db (compile): 22:18:25.110280 => 22:18:25.139914
+[0m22:18:25.164312 [debug] [Thread-1 (]: Writing runtime sql for node "test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db"
+[0m22:18:25.165437 [debug] [Thread-2 (]: Began executing node test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db
+[0m22:18:25.176611 [debug] [Thread-2 (]: Writing runtime sql for node "test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db"
+[0m22:18:25.189406 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db"
+[0m22:18:25.192539 [debug] [Thread-1 (]: On test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db: BEGIN
+[0m22:18:25.194079 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db"
+[0m22:18:25.196620 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:18:25.199695 [debug] [Thread-2 (]: On test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db: BEGIN
+[0m22:18:25.260901 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.263270 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:18:25.265519 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db"
+[0m22:18:25.268922 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.269961 [debug] [Thread-1 (]: On test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        price_tier as value_field,
+        count(*) as n_records
+
+    from "llm_tracker"."main_combined"."llm_value_scores"
+    group by price_tier
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'free','budget','mid','premium','ultra'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m22:18:25.272650 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db"
+[0m22:18:25.276679 [debug] [Thread-2 (]: On test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        quality_tier as value_field,
+        count(*) as n_records
+
+    from "llm_tracker"."main_combined"."llm_value_scores"
+    group by quality_tier
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'elite','high','medium','low','unranked'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m22:18:25.307030 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.307911 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.313540 [debug] [Thread-2 (]: Timing info for test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db (execute): 22:18:25.170019 => 22:18:25.312658
+[0m22:18:25.318305 [debug] [Thread-1 (]: Timing info for test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db (execute): 22:18:25.141853 => 22:18:25.317510
+[0m22:18:25.321263 [debug] [Thread-2 (]: On test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db: ROLLBACK
+[0m22:18:25.324423 [debug] [Thread-1 (]: On test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db: ROLLBACK
+[0m22:18:25.327563 [debug] [Thread-2 (]: Failed to rollback 'test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db'
+[0m22:18:25.329769 [debug] [Thread-1 (]: Failed to rollback 'test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db'
+[0m22:18:25.331625 [debug] [Thread-2 (]: On test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db: Close
+[0m22:18:25.334401 [debug] [Thread-1 (]: On test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db: Close
+[0m22:18:25.338149 [info ] [Thread-2 (]: 2 of 10 PASS accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked  [[32mPASS[0m in 0.25s]
+[0m22:18:25.345193 [info ] [Thread-1 (]: 1 of 10 PASS accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra  [[32mPASS[0m in 0.26s]
+[0m22:18:25.348401 [debug] [Thread-2 (]: Finished running node test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db
+[0m22:18:25.351555 [debug] [Thread-1 (]: Finished running node test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db
+[0m22:18:25.354886 [debug] [Thread-2 (]: Began running node test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3
+[0m22:18:25.357566 [debug] [Thread-1 (]: Began running node test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7
+[0m22:18:25.360212 [info ] [Thread-2 (]: 3 of 10 START test not_null_llm_value_scores_model_id .......................... [RUN]
+[0m22:18:25.362873 [info ] [Thread-1 (]: 4 of 10 START test not_null_lmsys_formatted_ingestion_date ..................... [RUN]
+[0m22:18:25.367202 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db, now test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3)
+[0m22:18:25.369761 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db, now test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7)
+[0m22:18:25.371192 [debug] [Thread-2 (]: Began compiling node test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3
+[0m22:18:25.372572 [debug] [Thread-1 (]: Began compiling node test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7
+[0m22:18:25.384982 [debug] [Thread-2 (]: Writing injected SQL for node "test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3"
+[0m22:18:25.391725 [debug] [Thread-1 (]: Writing injected SQL for node "test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7"
+[0m22:18:25.406768 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3 (compile): 22:18:25.373880 => 22:18:25.406299
+[0m22:18:25.409417 [debug] [Thread-2 (]: Began executing node test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3
+[0m22:18:25.410540 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7 (compile): 22:18:25.386415 => 22:18:25.409913
+[0m22:18:25.415737 [debug] [Thread-2 (]: Writing runtime sql for node "test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3"
+[0m22:18:25.418830 [debug] [Thread-1 (]: Began executing node test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7
+[0m22:18:25.427796 [debug] [Thread-1 (]: Writing runtime sql for node "test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7"
+[0m22:18:25.443844 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3"
+[0m22:18:25.448151 [debug] [Thread-2 (]: On test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3: BEGIN
+[0m22:18:25.449326 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7"
+[0m22:18:25.451342 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:18:25.454381 [debug] [Thread-1 (]: On test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7: BEGIN
+[0m22:18:25.556430 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.557594 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:18:25.560016 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3"
+[0m22:18:25.563675 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.564735 [debug] [Thread-2 (]: On test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select model_id
+from "llm_tracker"."main_combined"."llm_value_scores"
+where model_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:18:25.567538 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7"
+[0m22:18:25.573930 [debug] [Thread-1 (]: On test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select ingestion_date
+from "llm_tracker"."main_formatted"."lmsys_formatted"
+where ingestion_date is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:18:25.574554 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.578373 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.581191 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3 (execute): 22:18:25.412229 => 22:18:25.580640
+[0m22:18:25.589599 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7 (execute): 22:18:25.423193 => 22:18:25.588651
+[0m22:18:25.592896 [debug] [Thread-2 (]: On test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3: ROLLBACK
+[0m22:18:25.596946 [debug] [Thread-1 (]: On test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7: ROLLBACK
+[0m22:18:25.600660 [debug] [Thread-2 (]: Failed to rollback 'test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3'
+[0m22:18:25.603428 [debug] [Thread-1 (]: Failed to rollback 'test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7'
+[0m22:18:25.605378 [debug] [Thread-2 (]: On test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3: Close
+[0m22:18:25.608047 [debug] [Thread-1 (]: On test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7: Close
+[0m22:18:25.613973 [info ] [Thread-2 (]: 3 of 10 PASS not_null_llm_value_scores_model_id ................................ [[32mPASS[0m in 0.25s]
+[0m22:18:25.624767 [info ] [Thread-1 (]: 4 of 10 PASS not_null_lmsys_formatted_ingestion_date ........................... [[32mPASS[0m in 0.26s]
+[0m22:18:25.628172 [debug] [Thread-2 (]: Finished running node test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3
+[0m22:18:25.631810 [debug] [Thread-1 (]: Finished running node test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7
+[0m22:18:25.634693 [debug] [Thread-2 (]: Began running node test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b
+[0m22:18:25.638217 [debug] [Thread-1 (]: Began running node test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d
+[0m22:18:25.640747 [info ] [Thread-2 (]: 5 of 10 START test not_null_lmsys_formatted_model_key .......................... [RUN]
+[0m22:18:25.644648 [info ] [Thread-1 (]: 6 of 10 START test not_null_openrouter_formatted_avg_price_per_1m_usd .......... [RUN]
+[0m22:18:25.649262 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3, now test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b)
+[0m22:18:25.652327 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7, now test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d)
+[0m22:18:25.655012 [debug] [Thread-2 (]: Began compiling node test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b
+[0m22:18:25.657352 [debug] [Thread-1 (]: Began compiling node test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d
+[0m22:18:25.665371 [debug] [Thread-2 (]: Writing injected SQL for node "test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b"
+[0m22:18:25.673979 [debug] [Thread-1 (]: Writing injected SQL for node "test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d"
+[0m22:18:25.690417 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b (compile): 22:18:25.659453 => 22:18:25.689885
+[0m22:18:25.693396 [debug] [Thread-2 (]: Began executing node test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b
+[0m22:18:25.694399 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d (compile): 22:18:25.666911 => 22:18:25.693877
+[0m22:18:25.699210 [debug] [Thread-2 (]: Writing runtime sql for node "test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b"
+[0m22:18:25.701559 [debug] [Thread-1 (]: Began executing node test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d
+[0m22:18:25.712191 [debug] [Thread-1 (]: Writing runtime sql for node "test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d"
+[0m22:18:25.724075 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b"
+[0m22:18:25.726988 [debug] [Thread-2 (]: On test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b: BEGIN
+[0m22:18:25.727857 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d"
+[0m22:18:25.730113 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:18:25.735267 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d: BEGIN
+[0m22:18:25.772983 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.775510 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:18:25.778352 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b"
+[0m22:18:25.782109 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.784343 [debug] [Thread-2 (]: On test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select model_key
+from "llm_tracker"."main_formatted"."lmsys_formatted"
+where model_key is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:18:25.787457 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d"
+[0m22:18:25.791863 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.792592 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select avg_price_per_1m_usd
+from "llm_tracker"."main_formatted"."openrouter_formatted"
+where avg_price_per_1m_usd is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:18:25.797473 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b (execute): 22:18:25.696421 => 22:18:25.796960
+[0m22:18:25.801567 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.802238 [debug] [Thread-2 (]: On test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b: ROLLBACK
+[0m22:18:25.806549 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d (execute): 22:18:25.707236 => 22:18:25.806138
+[0m22:18:25.808879 [debug] [Thread-2 (]: Failed to rollback 'test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b'
+[0m22:18:25.810590 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d: ROLLBACK
+[0m22:18:25.813400 [debug] [Thread-2 (]: On test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b: Close
+[0m22:18:25.817456 [debug] [Thread-1 (]: Failed to rollback 'test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d'
+[0m22:18:25.820144 [info ] [Thread-2 (]: 5 of 10 PASS not_null_lmsys_formatted_model_key ................................ [[32mPASS[0m in 0.17s]
+[0m22:18:25.822652 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d: Close
+[0m22:18:25.824852 [debug] [Thread-2 (]: Finished running node test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b
+[0m22:18:25.829390 [info ] [Thread-1 (]: 6 of 10 PASS not_null_openrouter_formatted_avg_price_per_1m_usd ................ [[32mPASS[0m in 0.18s]
+[0m22:18:25.831104 [debug] [Thread-2 (]: Began running node test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8
+[0m22:18:25.833251 [debug] [Thread-1 (]: Finished running node test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d
+[0m22:18:25.835896 [info ] [Thread-2 (]: 7 of 10 START test not_null_openrouter_formatted_ingestion_date ................ [RUN]
+[0m22:18:25.838527 [debug] [Thread-1 (]: Began running node test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1
+[0m22:18:25.841840 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b, now test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8)
+[0m22:18:25.845383 [info ] [Thread-1 (]: 8 of 10 START test not_null_openrouter_formatted_model_id ...................... [RUN]
+[0m22:18:25.848863 [debug] [Thread-2 (]: Began compiling node test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8
+[0m22:18:25.851410 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d, now test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1)
+[0m22:18:25.859850 [debug] [Thread-2 (]: Writing injected SQL for node "test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8"
+[0m22:18:25.862894 [debug] [Thread-1 (]: Began compiling node test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1
+[0m22:18:25.879751 [debug] [Thread-1 (]: Writing injected SQL for node "test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1"
+[0m22:18:25.890516 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8 (compile): 22:18:25.853475 => 22:18:25.889836
+[0m22:18:25.893696 [debug] [Thread-2 (]: Began executing node test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8
+[0m22:18:25.894804 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1 (compile): 22:18:25.867549 => 22:18:25.894303
+[0m22:18:25.899710 [debug] [Thread-2 (]: Writing runtime sql for node "test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8"
+[0m22:18:25.901969 [debug] [Thread-1 (]: Began executing node test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1
+[0m22:18:25.911321 [debug] [Thread-1 (]: Writing runtime sql for node "test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1"
+[0m22:18:25.921372 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8"
+[0m22:18:25.925199 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8: BEGIN
+[0m22:18:25.926269 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1"
+[0m22:18:25.927741 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:18:25.929942 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1: BEGIN
+[0m22:18:25.961252 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.962485 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:18:25.964814 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8"
+[0m22:18:25.968755 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.970622 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select ingestion_date
+from "llm_tracker"."main_formatted"."openrouter_formatted"
+where ingestion_date is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:18:25.973211 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1"
+[0m22:18:25.977901 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.978508 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select model_id
+from "llm_tracker"."main_formatted"."openrouter_formatted"
+where model_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:18:25.983446 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8 (execute): 22:18:25.896618 => 22:18:25.982763
+[0m22:18:25.987760 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:25.988766 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8: ROLLBACK
+[0m22:18:25.993268 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1 (execute): 22:18:25.905944 => 22:18:25.992682
+[0m22:18:25.995533 [debug] [Thread-2 (]: Failed to rollback 'test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8'
+[0m22:18:25.997345 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1: ROLLBACK
+[0m22:18:25.999066 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8: Close
+[0m22:18:26.001472 [debug] [Thread-1 (]: Failed to rollback 'test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1'
+[0m22:18:26.003609 [info ] [Thread-2 (]: 7 of 10 PASS not_null_openrouter_formatted_ingestion_date ...................... [[32mPASS[0m in 0.16s]
+[0m22:18:26.005730 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1: Close
+[0m22:18:26.008099 [debug] [Thread-2 (]: Finished running node test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8
+[0m22:18:26.016175 [info ] [Thread-1 (]: 8 of 10 PASS not_null_openrouter_formatted_model_id ............................ [[32mPASS[0m in 0.16s]
+[0m22:18:26.018064 [debug] [Thread-2 (]: Began running node test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11
+[0m22:18:26.020795 [debug] [Thread-1 (]: Finished running node test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1
+[0m22:18:26.023349 [info ] [Thread-2 (]: 9 of 10 START test not_null_openrouter_formatted_provider ...................... [RUN]
+[0m22:18:26.025718 [debug] [Thread-1 (]: Began running node test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735
+[0m22:18:26.028607 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8, now test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11)
+[0m22:18:26.031207 [info ] [Thread-1 (]: 10 of 10 START test unique_openrouter_formatted_model_id ....................... [RUN]
+[0m22:18:26.033365 [debug] [Thread-2 (]: Began compiling node test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11
+[0m22:18:26.036182 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1, now test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735)
+[0m22:18:26.048424 [debug] [Thread-2 (]: Writing injected SQL for node "test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11"
+[0m22:18:26.050564 [debug] [Thread-1 (]: Began compiling node test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735
+[0m22:18:26.062948 [debug] [Thread-1 (]: Writing injected SQL for node "test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735"
+[0m22:18:26.070605 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11 (compile): 22:18:26.037911 => 22:18:26.069985
+[0m22:18:26.073307 [debug] [Thread-2 (]: Began executing node test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11
+[0m22:18:26.074144 [debug] [Thread-1 (]: Timing info for test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735 (compile): 22:18:26.053636 => 22:18:26.073795
+[0m22:18:26.080407 [debug] [Thread-2 (]: Writing runtime sql for node "test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11"
+[0m22:18:26.082610 [debug] [Thread-1 (]: Began executing node test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735
+[0m22:18:26.089711 [debug] [Thread-1 (]: Writing runtime sql for node "test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735"
+[0m22:18:26.099135 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11"
+[0m22:18:26.101874 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11: BEGIN
+[0m22:18:26.102869 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735"
+[0m22:18:26.104813 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:18:26.108490 [debug] [Thread-1 (]: On test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735: BEGIN
+[0m22:18:26.140784 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:26.141957 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:18:26.143201 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11"
+[0m22:18:26.146368 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:26.148855 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select provider
+from "llm_tracker"."main_formatted"."openrouter_formatted"
+where provider is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:18:26.151589 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735"
+[0m22:18:26.143643 [debug] [Thread-1 (]: On test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    model_id as unique_field,
+    count(*) as n_records
+
+from "llm_tracker"."main_formatted"."openrouter_formatted"
+where model_id is not null
+group by model_id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m22:18:26.145068 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:18:26.150984 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11 (execute): 22:18:26.077266 => 22:18:26.150482
+[0m22:18:26.153206 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11: ROLLBACK
+[0m22:18:26.158130 [debug] [Thread-2 (]: Failed to rollback 'test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11'
+[0m22:18:26.160928 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11: Close
+[0m22:18:26.164510 [info ] [Thread-2 (]: 9 of 10 PASS not_null_openrouter_formatted_provider ............................ [[32mPASS[0m in 0.14s]
+[0m22:18:26.165432 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:18:26.167114 [debug] [Thread-2 (]: Finished running node test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11
+[0m22:18:26.171394 [debug] [Thread-1 (]: Timing info for test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735 (execute): 22:18:26.086560 => 22:18:26.171062
+[0m22:18:26.174889 [debug] [Thread-1 (]: On test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735: ROLLBACK
+[0m22:18:26.177237 [debug] [Thread-1 (]: Failed to rollback 'test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735'
+[0m22:18:26.179424 [debug] [Thread-1 (]: On test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735: Close
+[0m22:18:26.186901 [info ] [Thread-1 (]: 10 of 10 PASS unique_openrouter_formatted_model_id ............................. [[32mPASS[0m in 0.15s]
+[0m22:18:26.189657 [debug] [Thread-1 (]: Finished running node test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735
+[0m22:18:26.194585 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:18:26.196867 [debug] [MainThread]: On master: BEGIN
+[0m22:18:26.198972 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:18:26.244045 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:18:26.247444 [debug] [MainThread]: On master: COMMIT
+[0m22:18:26.250074 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:18:26.253060 [debug] [MainThread]: On master: COMMIT
+[0m22:18:26.256850 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:18:26.259223 [debug] [MainThread]: On master: Close
+[0m22:18:26.266061 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:18:26.268215 [debug] [MainThread]: Connection 'list_llm_tracker_main_combined' was properly closed.
+[0m22:18:26.270196 [debug] [MainThread]: Connection 'list_llm_tracker_main_formatted' was properly closed.
+[0m22:18:26.272262 [debug] [MainThread]: Connection 'test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735' was properly closed.
+[0m22:18:26.274624 [debug] [MainThread]: Connection 'test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11' was properly closed.
+[0m22:18:26.277484 [info ] [MainThread]: 
+[0m22:18:26.280265 [info ] [MainThread]: Finished running 10 tests in 0 hours 0 minutes and 1.48 seconds (1.48s).
+[0m22:18:26.283695 [debug] [MainThread]: Command end result
+[0m22:18:26.363973 [info ] [MainThread]: 
+[0m22:18:26.366455 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:18:26.369190 [info ] [MainThread]: 
+[0m22:18:26.372864 [info ] [MainThread]: Done. PASS=10 WARN=0 ERROR=0 SKIP=0 TOTAL=10
+[0m22:18:26.376239 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 3.021179, "process_user_time": 3.808647, "process_kernel_time": 1.785656, "process_mem_max_rss": "193816", "process_in_blocks": "9344", "process_out_blocks": "0"}
+[0m22:18:26.379224 [debug] [MainThread]: Command `dbt test` succeeded at 22:18:26.378898 after 3.02 seconds
+[0m22:18:26.381599 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f148d6e8350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1491d9ce90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1491d89f50>]}
+[0m22:18:26.384449 [debug] [MainThread]: Flushing usage events
+[0m22:25:38.161032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd75300f8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd75300ec10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd75300e190>]}
+
+
+============================== 22:25:38.217746 | bdf77e19-b23c-45b6-b6f2-e5c5904b527d ==============================
+[0m22:25:38.217746 [info ] [MainThread]: Running with dbt=1.7.19
+[0m22:25:38.225014 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/opt/airflow/dbt_project/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir /opt/airflow/dbt_project --project-dir /opt/airflow/dbt_project --select formatted.openrouter_formatted formatted.lmsys_formatted combined.llm_value_scores', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:25:44.321341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bdf77e19-b23c-45b6-b6f2-e5c5904b527d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd7530602d0>]}
+[0m22:25:44.774652 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bdf77e19-b23c-45b6-b6f2-e5c5904b527d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd753a14dd0>]}
+[0m22:25:44.794082 [info ] [MainThread]: Registered adapter: duckdb=1.7.2
+[0m22:25:45.022556 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m22:25:46.523010 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:25:46.547396 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:25:46.637057 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bdf77e19-b23c-45b6-b6f2-e5c5904b527d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd752eb32d0>]}
+[0m22:25:47.036086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bdf77e19-b23c-45b6-b6f2-e5c5904b527d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd75300fc10>]}
+[0m22:25:47.051444 [info ] [MainThread]: Found 3 models, 10 tests, 0 sources, 0 exposures, 0 metrics, 391 macros, 0 groups, 0 semantic models
+[0m22:25:47.064947 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bdf77e19-b23c-45b6-b6f2-e5c5904b527d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd752eb4110>]}
+[0m22:25:47.095894 [info ] [MainThread]: 
+[0m22:25:47.106553 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:25:47.132990 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_llm_tracker'
+[0m22:25:47.161354 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_llm_tracker'
+[0m22:25:47.378902 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker"
+[0m22:25:47.381567 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker"
+[0m22:25:47.395935 [debug] [ThreadPool]: On list_llm_tracker: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"llm_tracker"'
+    
+  
+  
+[0m22:25:47.385141 [debug] [ThreadPool]: On list_llm_tracker: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where catalog_name = '"llm_tracker"'
+    
+  
+  
+[0m22:25:47.410307 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:25:47.402530 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:25:47.989003 [debug] [ThreadPool]: SQL status: OK in 1.0 seconds
+[0m22:25:48.046168 [debug] [ThreadPool]: On list_llm_tracker: Close
+[0m22:25:48.073286 [debug] [ThreadPool]: SQL status: OK in 1.0 seconds
+[0m22:25:48.087313 [debug] [ThreadPool]: On list_llm_tracker: Close
+[0m22:25:48.128992 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_llm_tracker, now create_llm_tracker_main_formatted)
+[0m22:25:48.131462 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_llm_tracker, now create_llm_tracker_main_combined)
+[0m22:25:48.136272 [debug] [ThreadPool]: Creating schema "database: "llm_tracker"
+schema: "main_formatted"
+"
+[0m22:25:48.142121 [debug] [ThreadPool]: Creating schema "database: "llm_tracker"
+schema: "main_combined"
+"
+[0m22:25:48.201589 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_formatted"
+[0m22:25:48.203423 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_combined"
+[0m22:25:48.206150 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "create_llm_tracker_main_formatted"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='llm_tracker'
+        and type='sqlite'
+    
+  
+[0m22:25:48.209607 [debug] [ThreadPool]: On create_llm_tracker_main_combined: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "create_llm_tracker_main_combined"} */
+
+    
+        select type from duckdb_databases()
+        where database_name='llm_tracker'
+        and type='sqlite'
+    
+  
+[0m22:25:48.212970 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:25:48.216514 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:25:48.342287 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:48.346796 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_formatted"
+[0m22:25:48.348777 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: BEGIN
+[0m22:25:48.349866 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:48.356743 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:48.363272 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_combined"
+[0m22:25:48.364921 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_formatted"
+[0m22:25:48.366552 [debug] [ThreadPool]: On create_llm_tracker_main_combined: BEGIN
+[0m22:25:48.368130 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "create_llm_tracker_main_formatted"} */
+
+    
+    
+        create schema if not exists "llm_tracker"."main_formatted"
+    
+[0m22:25:48.452213 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:48.457463 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_combined"
+[0m22:25:48.464042 [debug] [ThreadPool]: On create_llm_tracker_main_combined: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "create_llm_tracker_main_combined"} */
+
+    
+    
+        create schema if not exists "llm_tracker"."main_combined"
+    
+[0m22:25:48.599827 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:48.611948 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: COMMIT
+[0m22:25:48.622356 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_formatted"
+[0m22:25:48.628381 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: COMMIT
+[0m22:25:48.705589 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:48.711171 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:48.750677 [debug] [ThreadPool]: On create_llm_tracker_main_formatted: Close
+[0m22:25:48.734345 [debug] [ThreadPool]: On create_llm_tracker_main_combined: COMMIT
+[0m22:25:48.768769 [debug] [ThreadPool]: Using duckdb connection "create_llm_tracker_main_combined"
+[0m22:25:48.775266 [debug] [ThreadPool]: On create_llm_tracker_main_combined: COMMIT
+[0m22:25:48.791165 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:48.802153 [debug] [ThreadPool]: On create_llm_tracker_main_combined: Close
+[0m22:25:48.866160 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_llm_tracker_main_formatted'
+[0m22:25:48.870763 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_llm_tracker_main_formatted, now list_llm_tracker_main_combined)
+[0m22:25:48.919010 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_formatted"
+[0m22:25:48.921700 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_combined"
+[0m22:25:48.926692 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: BEGIN
+[0m22:25:48.930943 [debug] [ThreadPool]: On list_llm_tracker_main_combined: BEGIN
+[0m22:25:48.935952 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:25:48.940496 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:25:49.096967 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:49.105646 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:49.109984 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_formatted"
+[0m22:25:49.114622 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_combined"
+[0m22:25:49.119100 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker_main_formatted"} */
+select
+      'llm_tracker' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_formatted'
+    and table_catalog = 'llm_tracker'
+  
+[0m22:25:49.124047 [debug] [ThreadPool]: On list_llm_tracker_main_combined: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker_main_combined"} */
+select
+      'llm_tracker' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_combined'
+    and table_catalog = 'llm_tracker'
+  
+[0m22:25:49.357463 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:49.370341 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:25:49.480448 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: ROLLBACK
+[0m22:25:49.481641 [debug] [ThreadPool]: On list_llm_tracker_main_combined: ROLLBACK
+[0m22:25:49.506465 [debug] [ThreadPool]: Failed to rollback 'list_llm_tracker_main_combined'
+[0m22:25:49.507746 [debug] [ThreadPool]: Failed to rollback 'list_llm_tracker_main_formatted'
+[0m22:25:49.510711 [debug] [ThreadPool]: On list_llm_tracker_main_combined: Close
+[0m22:25:49.515793 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: Close
+[0m22:25:49.570635 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bdf77e19-b23c-45b6-b6f2-e5c5904b527d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd747e63810>]}
+[0m22:25:49.579917 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:25:49.584306 [debug] [MainThread]: On master: BEGIN
+[0m22:25:49.589342 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:25:49.709327 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:25:49.715682 [debug] [MainThread]: On master: COMMIT
+[0m22:25:49.719582 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:25:49.724490 [debug] [MainThread]: On master: COMMIT
+[0m22:25:49.729444 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:25:49.731554 [debug] [MainThread]: On master: Close
+[0m22:25:49.739487 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m22:25:49.746907 [info ] [MainThread]: 
+[0m22:25:49.826537 [debug] [Thread-1 (]: Began running node model.llm_tracker.lmsys_formatted
+[0m22:25:49.828274 [debug] [Thread-2 (]: Began running node model.llm_tracker.openrouter_formatted
+[0m22:25:49.833919 [info ] [Thread-1 (]: 1 of 3 START sql table model main_formatted.lmsys_formatted .................... [RUN]
+[0m22:25:49.840900 [info ] [Thread-2 (]: 2 of 3 START sql table model main_formatted.openrouter_formatted ............... [RUN]
+[0m22:25:49.847317 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.llm_tracker.lmsys_formatted'
+[0m22:25:49.853727 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.llm_tracker.openrouter_formatted'
+[0m22:25:49.859054 [debug] [Thread-1 (]: Began compiling node model.llm_tracker.lmsys_formatted
+[0m22:25:49.863409 [debug] [Thread-2 (]: Began compiling node model.llm_tracker.openrouter_formatted
+[0m22:25:49.965428 [debug] [Thread-2 (]: Writing injected SQL for node "model.llm_tracker.openrouter_formatted"
+[0m22:25:49.967755 [debug] [Thread-1 (]: Writing injected SQL for node "model.llm_tracker.lmsys_formatted"
+[0m22:25:50.049444 [debug] [Thread-2 (]: Timing info for model.llm_tracker.openrouter_formatted (compile): 22:25:49.892171 => 22:25:50.045258
+[0m22:25:50.051753 [debug] [Thread-1 (]: Timing info for model.llm_tracker.lmsys_formatted (compile): 22:25:49.868572 => 22:25:50.050884
+[0m22:25:50.056477 [debug] [Thread-2 (]: Began executing node model.llm_tracker.openrouter_formatted
+[0m22:25:50.061168 [debug] [Thread-1 (]: Began executing node model.llm_tracker.lmsys_formatted
+[0m22:25:50.265437 [debug] [Thread-1 (]: Writing runtime sql for node "model.llm_tracker.lmsys_formatted"
+[0m22:25:50.262927 [debug] [Thread-2 (]: Writing runtime sql for node "model.llm_tracker.openrouter_formatted"
+[0m22:25:50.291601 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:25:50.295901 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: BEGIN
+[0m22:25:50.298110 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:25:50.302736 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:25:50.308193 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: BEGIN
+[0m22:25:50.794763 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:25:50.799669 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:25:50.803329 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:25:50.803914 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:25:50.806179 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.lmsys_formatted"} */
+
+  
+    
+    
+
+    create  table
+      "llm_tracker"."main_formatted"."lmsys_formatted__dbt_tmp"
+  
+    as (
+      
+
+-- =============================================================
+-- Model: lmsys_formatted
+-- Layer: formatted
+-- Description: Normalize LMSYS Chatbot Arena rankings into
+--              clean typed columns with composite quality score.
+-- =============================================================
+
+WITH raw_file AS (
+    SELECT
+        json_extract_string(row_data, '$.key')                      AS model_key,
+        json_extract_string(row_data, '$.Model')                    AS model_name,
+        json_extract_string(row_data, '$.Arena Elo rating')         AS elo_raw,
+        json_extract_string(row_data, '$."MT-bench (score)"')       AS mt_bench_raw,
+        json_extract_string(row_data, '$.MMLU')                     AS mmlu_raw,
+        json_extract_string(row_data, '$.License')                  AS license,
+        json_extract_string(row_data, '$."Knowledge cutoff date"')  AS knowledge_cutoff
+    FROM read_json_auto(
+        '/opt/airflow/data/raw/lmsys/' ||
+        '2026-06-07' ||
+        '/rankings.json',
+        format='auto'
+    ) f
+    CROSS JOIN UNNEST(f.rankings::JSON[]) AS t(row_data)
+),
+
+normalized AS (
+    SELECT
+        LOWER(TRIM(model_key))                                          AS model_key,
+        TRIM(model_name)                                                AS model_name,
+
+        -- ELO score (numeric, higher = better)
+        CASE
+            WHEN elo_raw IS NULL OR elo_raw = '-' THEN NULL
+            ELSE ROUND(TRY_CAST(elo_raw AS DOUBLE), 2)
+        END                                                             AS elo_score,
+
+        -- MT-Bench 0–10
+        CASE
+            WHEN mt_bench_raw IS NULL OR mt_bench_raw = '-' THEN NULL
+            ELSE ROUND(TRY_CAST(mt_bench_raw AS DOUBLE), 2)
+        END                                                             AS mt_bench_score,
+
+        -- MMLU 0–100
+        CASE
+            WHEN mmlu_raw IS NULL OR mmlu_raw = '-' THEN NULL
+            ELSE ROUND(TRY_CAST(mmlu_raw AS DOUBLE), 2)
+        END                                                             AS mmlu_score,
+
+        -- Composite quality score (0–1 normalized)
+        -- Weights: ELO 50%, MT-Bench 30%, MMLU 20%
+        ROUND(
+            COALESCE(
+                CASE WHEN elo_raw IS NOT NULL AND elo_raw != '-'
+                     THEN LEAST(GREATEST((TRY_CAST(elo_raw AS DOUBLE) - 800.0) / 600.0, 0), 1)
+                     ELSE 0.5 END, 0.5
+            ) * 0.5
+            +
+            COALESCE(
+                CASE WHEN mt_bench_raw IS NOT NULL AND mt_bench_raw != '-'
+                     THEN TRY_CAST(mt_bench_raw AS DOUBLE) / 10.0
+                     ELSE 0.5 END, 0.5
+            ) * 0.3
+            +
+            COALESCE(
+                CASE WHEN mmlu_raw IS NOT NULL AND mmlu_raw != '-'
+                     THEN TRY_CAST(mmlu_raw AS DOUBLE) / 100.0
+                     ELSE 0.5 END, 0.5
+            ) * 0.2,
+            4
+        )                                                               AS quality_score_normalized,
+
+        COALESCE(TRIM(license), 'unknown')                             AS license,
+        knowledge_cutoff,
+
+        -- Ingestion metadata
+        '2026-06-07'                                                AS ingestion_date,
+        CURRENT_TIMESTAMP                                               AS processed_at_utc
+
+    FROM raw_file
+    WHERE model_name IS NOT NULL
+)
+
+SELECT * FROM normalized
+    );
+  
+  
+[0m22:25:50.808221 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:25:50.811335 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.openrouter_formatted"} */
+
+  
+    
+    
+
+    create  table
+      "llm_tracker"."main_formatted"."openrouter_formatted__dbt_tmp"
+  
+    as (
+      
+
+-- =============================================================
+-- Model: openrouter_formatted
+-- Layer: formatted
+-- Description: Normalize OpenRouter raw JSON into clean typed
+--              columns. Prices converted to USD per 1M tokens
+--              and EUR per 1M tokens.
+-- =============================================================
+
+WITH raw_file AS (
+    SELECT
+        json_extract_string(model, '$.id')                          AS model_id,
+        json_extract_string(model, '$.name')                        AS model_name,
+        json_extract_string(model, '$.pricing.prompt')              AS price_prompt_raw,
+        json_extract_string(model, '$.pricing.completion')          AS price_completion_raw,
+        TRY_CAST(json_extract(model, '$.context_length') AS INTEGER) AS context_length,
+        json_extract_string(model, '$.description')                 AS description,
+        json_extract_string(model, '$.architecture.modality')       AS modality,
+        json_extract_string(model, '$.top_provider.is_moderated')   AS is_moderated
+    FROM read_json_auto(
+        '/opt/airflow/data/raw/openrouter/' ||
+        '2026-06-07' ||
+        '/models.json',
+        format='auto'
+    ) f
+    CROSS JOIN UNNEST(f.models::JSON[]) AS t(model)
+),
+
+cleaned AS (
+    SELECT
+        TRIM(model_id)                                              AS model_id,
+        TRIM(model_name)                                            AS model_name,
+
+        -- Provider extracted from model_id prefix e.g. "openai/gpt-4o" → "openai"
+        SPLIT_PART(TRIM(model_id), '/', 1)                         AS provider,
+
+        -- Slug: last part of model_id for joining
+        LOWER(SPLIT_PART(TRIM(model_id), '/', 2))                  AS model_slug,
+
+        -- Price per token → price per 1M tokens (USD)
+        ROUND(TRY_CAST(price_prompt_raw     AS DOUBLE) * 1e6, 6)   AS price_prompt_per_1m_usd,
+        ROUND(TRY_CAST(price_completion_raw AS DOUBLE) * 1e6, 6)   AS price_completion_per_1m_usd,
+
+        -- Average price per 1M tokens USD
+        ROUND(
+            (TRY_CAST(price_prompt_raw AS DOUBLE) +
+             TRY_CAST(price_completion_raw AS DOUBLE)) / 2.0 * 1e6,
+            6
+        )                                                           AS avg_price_per_1m_usd,
+
+        -- Convert to EUR (1 USD ≈ 0.92 EUR as of 2024)
+        ROUND(
+            (TRY_CAST(price_prompt_raw AS DOUBLE) +
+             TRY_CAST(price_completion_raw AS DOUBLE)) / 2.0 * 1e6 * 0.92,
+            6
+        )                                                           AS avg_price_per_1m_eur,
+
+        COALESCE(context_length, 0)                                 AS context_length,
+        COALESCE(TRIM(modality), 'text->text')                     AS modality,
+
+        -- Ingestion metadata
+        '2026-06-07'                                            AS ingestion_date,
+        CURRENT_TIMESTAMP                                           AS processed_at_utc
+
+    FROM raw_file
+    WHERE model_id IS NOT NULL
+      AND price_prompt_raw IS NOT NULL
+      AND price_completion_raw IS NOT NULL
+      AND TRY_CAST(price_prompt_raw     AS DOUBLE) IS NOT NULL
+      AND TRY_CAST(price_completion_raw AS DOUBLE) IS NOT NULL
+      AND TRY_CAST(price_prompt_raw     AS DOUBLE) >= 0
+      AND TRY_CAST(price_completion_raw AS DOUBLE) >= 0
+)
+
+SELECT * FROM cleaned
+    );
+  
+  
+[0m22:25:52.898526 [debug] [Thread-1 (]: SQL status: OK in 2.0 seconds
+[0m22:25:53.023825 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:25:53.029706 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.lmsys_formatted"} */
+alter table "llm_tracker"."main_formatted"."lmsys_formatted" rename to "lmsys_formatted__dbt_backup"
+[0m22:25:53.251169 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:25:53.271812 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:25:53.277430 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.lmsys_formatted"} */
+alter table "llm_tracker"."main_formatted"."lmsys_formatted__dbt_tmp" rename to "lmsys_formatted"
+[0m22:25:53.453780 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:25:53.818056 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: COMMIT
+[0m22:25:53.822068 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:25:53.825461 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: COMMIT
+[0m22:25:54.083675 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:25:54.099029 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.lmsys_formatted"
+[0m22:25:54.101833 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.lmsys_formatted"} */
+drop table if exists "llm_tracker"."main_formatted"."lmsys_formatted__dbt_backup" cascade
+[0m22:25:54.113162 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:25:54.123032 [debug] [Thread-1 (]: Timing info for model.llm_tracker.lmsys_formatted (execute): 22:25:50.093442 => 22:25:54.120931
+[0m22:25:54.126748 [debug] [Thread-1 (]: On model.llm_tracker.lmsys_formatted: Close
+[0m22:25:54.136518 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bdf77e19-b23c-45b6-b6f2-e5c5904b527d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd753060a50>]}
+[0m22:25:54.143979 [info ] [Thread-1 (]: 1 of 3 OK created sql table model main_formatted.lmsys_formatted ............... [[32mOK[0m in 4.29s]
+[0m22:25:54.147951 [debug] [Thread-1 (]: Finished running node model.llm_tracker.lmsys_formatted
+[0m22:25:56.472992 [debug] [Thread-2 (]: SQL status: OK in 6.0 seconds
+[0m22:25:56.553253 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:25:56.557217 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.openrouter_formatted"} */
+alter table "llm_tracker"."main_formatted"."openrouter_formatted" rename to "openrouter_formatted__dbt_backup"
+[0m22:25:56.568555 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:25:56.577597 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:25:56.580829 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.openrouter_formatted"} */
+alter table "llm_tracker"."main_formatted"."openrouter_formatted__dbt_tmp" rename to "openrouter_formatted"
+[0m22:25:56.584989 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:25:56.594224 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: COMMIT
+[0m22:25:56.597719 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:25:56.601100 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: COMMIT
+[0m22:25:56.625219 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:25:56.632286 [debug] [Thread-2 (]: Using duckdb connection "model.llm_tracker.openrouter_formatted"
+[0m22:25:56.635311 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.openrouter_formatted"} */
+drop table if exists "llm_tracker"."main_formatted"."openrouter_formatted__dbt_backup" cascade
+[0m22:25:56.648503 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:25:56.670681 [debug] [Thread-2 (]: Timing info for model.llm_tracker.openrouter_formatted (execute): 22:25:50.068133 => 22:25:56.668669
+[0m22:25:56.674449 [debug] [Thread-2 (]: On model.llm_tracker.openrouter_formatted: Close
+[0m22:25:56.883485 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bdf77e19-b23c-45b6-b6f2-e5c5904b527d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd747f88290>]}
+[0m22:25:56.891255 [info ] [Thread-2 (]: 2 of 3 OK created sql table model main_formatted.openrouter_formatted .......... [[32mOK[0m in 7.03s]
+[0m22:25:56.898022 [debug] [Thread-2 (]: Finished running node model.llm_tracker.openrouter_formatted
+[0m22:25:56.917462 [debug] [Thread-1 (]: Began running node model.llm_tracker.llm_value_scores
+[0m22:25:56.921796 [info ] [Thread-1 (]: 3 of 3 START sql table model main_combined.llm_value_scores .................... [RUN]
+[0m22:25:56.927005 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.llm_tracker.lmsys_formatted, now model.llm_tracker.llm_value_scores)
+[0m22:25:56.930573 [debug] [Thread-1 (]: Began compiling node model.llm_tracker.llm_value_scores
+[0m22:25:57.014258 [debug] [Thread-1 (]: Writing injected SQL for node "model.llm_tracker.llm_value_scores"
+[0m22:25:57.148062 [debug] [Thread-1 (]: Timing info for model.llm_tracker.llm_value_scores (compile): 22:25:56.984840 => 22:25:57.147695
+[0m22:25:57.150150 [debug] [Thread-1 (]: Began executing node model.llm_tracker.llm_value_scores
+[0m22:25:57.158999 [debug] [Thread-1 (]: Writing runtime sql for node "model.llm_tracker.llm_value_scores"
+[0m22:25:57.313518 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:25:57.339828 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: BEGIN
+[0m22:25:57.341975 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:57.610412 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:25:57.614064 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:25:57.617400 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.llm_value_scores"} */
+
+  
+    
+    
+
+    create  table
+      "llm_tracker"."main_combined"."llm_value_scores__dbt_tmp"
+  
+    as (
+      -- =============================================================
+-- Model: llm_value_scores
+-- Layer: combined
+-- Description: JOIN OpenRouter pricing + LMSYS quality rankings.
+--              Computes Value Score = quality / cost_per_1M_EUR.
+--              This is the core business output of the pipeline.
+-- =============================================================
+
+WITH pricing AS (
+    SELECT * FROM "llm_tracker"."main_formatted"."openrouter_formatted"
+),
+
+quality AS (
+    SELECT * FROM "llm_tracker"."main_formatted"."lmsys_formatted"
+),
+
+-- ── Join Strategy ──────────────────────────────────────────────────────────────
+-- OpenRouter model_id: "openai/gpt-4o"  → model_slug: "gpt-4o"
+-- LMSYS model_key:     "gpt-4o"
+-- Match on slug exact OR partial containment
+joined AS (
+    SELECT
+        p.model_id,
+        p.model_name                                AS openrouter_name,
+        p.provider,
+        p.model_slug,
+        p.price_prompt_per_1m_usd,
+        p.price_completion_per_1m_usd,
+        p.avg_price_per_1m_usd,
+        p.avg_price_per_1m_eur,
+        p.context_length,
+        p.modality,
+        q.model_name                                AS lmsys_name,
+        q.elo_score,
+        q.mt_bench_score,
+        q.mmlu_score,
+        q.quality_score_normalized,
+        q.license,
+        q.knowledge_cutoff,
+        p.ingestion_date,
+        p.processed_at_utc
+
+    FROM pricing p
+    LEFT JOIN quality q
+        ON p.model_slug = q.model_key
+        OR p.model_slug LIKE '%' || q.model_key || '%'
+        OR q.model_key  LIKE '%' || p.model_slug || '%'
+),
+
+-- ── Value Score Calculation ────────────────────────────────────────────────────
+scored AS (
+    SELECT
+        model_id,
+        openrouter_name                             AS model_name,
+        provider,
+        model_slug,
+        lmsys_name,
+
+        -- Pricing columns
+        price_prompt_per_1m_usd,
+        price_completion_per_1m_usd,
+        avg_price_per_1m_usd,
+        avg_price_per_1m_eur,
+        context_length,
+        modality,
+
+        -- Quality columns
+        elo_score,
+        mt_bench_score,
+        mmlu_score,
+        quality_score_normalized,
+        license,
+        knowledge_cutoff,
+
+        -- ── VALUE SCORE (core metric) ─────────────────────────────────────────
+        -- Higher = better quality per euro spent
+        CASE
+            WHEN quality_score_normalized IS NOT NULL
+             AND avg_price_per_1m_eur > 0
+                THEN ROUND(quality_score_normalized / avg_price_per_1m_eur, 6)
+            WHEN avg_price_per_1m_eur = 0
+                THEN 999.999   -- free models get maximum value score
+            ELSE NULL
+        END                                         AS value_score,
+
+        -- ── Price tier classification ─────────────────────────────────────────
+        CASE
+            WHEN avg_price_per_1m_usd = 0          THEN 'free'
+            WHEN avg_price_per_1m_usd < 0.5        THEN 'budget'
+            WHEN avg_price_per_1m_usd < 5.0        THEN 'mid'
+            WHEN avg_price_per_1m_usd < 20.0       THEN 'premium'
+            ELSE 'ultra'
+        END                                         AS price_tier,
+
+        -- ── Quality tier classification ───────────────────────────────────────
+        CASE
+            WHEN elo_score IS NULL                 THEN 'unranked'
+            WHEN elo_score >= 1250                 THEN 'elite'
+            WHEN elo_score >= 1150                 THEN 'high'
+            WHEN elo_score >= 1050                 THEN 'medium'
+            ELSE 'low'
+        END                                         AS quality_tier,
+
+        -- ── Has quality data flag ─────────────────────────────────────────────
+        CASE WHEN elo_score IS NOT NULL THEN TRUE ELSE FALSE END
+                                                    AS has_quality_data,
+
+        ingestion_date,
+        processed_at_utc
+
+    FROM joined
+),
+
+-- ── Rank models by value score within each price tier ─────────────────────────
+ranked AS (
+    SELECT
+        *,
+        RANK() OVER (ORDER BY COALESCE(value_score, 0) DESC)           AS global_rank,
+        RANK() OVER (
+            PARTITION BY price_tier
+            ORDER BY COALESCE(value_score, 0) DESC
+        )                                                               AS rank_in_tier,
+        CASE
+            WHEN RANK() OVER (ORDER BY COALESCE(value_score, 0) DESC) <= 10
+            THEN TRUE ELSE FALSE
+        END                                                             AS is_top10_value
+
+    FROM scored
+)
+
+SELECT * FROM ranked
+ORDER BY global_rank ASC
+    );
+  
+  
+[0m22:25:57.750050 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:25:57.756177 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:25:57.758568 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.llm_value_scores"} */
+alter table "llm_tracker"."main_combined"."llm_value_scores" rename to "llm_value_scores__dbt_backup"
+[0m22:25:57.761029 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:25:57.773079 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:25:57.776104 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.llm_value_scores"} */
+alter table "llm_tracker"."main_combined"."llm_value_scores__dbt_tmp" rename to "llm_value_scores"
+[0m22:25:57.780277 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:25:57.785822 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: COMMIT
+[0m22:25:57.788213 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:25:57.790926 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: COMMIT
+[0m22:25:57.819303 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:25:57.825098 [debug] [Thread-1 (]: Using duckdb connection "model.llm_tracker.llm_value_scores"
+[0m22:25:57.828700 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "model.llm_tracker.llm_value_scores"} */
+drop table if exists "llm_tracker"."main_combined"."llm_value_scores__dbt_backup" cascade
+[0m22:25:57.838633 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:25:57.856598 [debug] [Thread-1 (]: Timing info for model.llm_tracker.llm_value_scores (execute): 22:25:57.151665 => 22:25:57.856089
+[0m22:25:57.860088 [debug] [Thread-1 (]: On model.llm_tracker.llm_value_scores: Close
+[0m22:25:58.002218 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'bdf77e19-b23c-45b6-b6f2-e5c5904b527d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd747c22e10>]}
+[0m22:25:58.004771 [info ] [Thread-1 (]: 3 of 3 OK created sql table model main_combined.llm_value_scores ............... [[32mOK[0m in 1.08s]
+[0m22:25:58.008302 [debug] [Thread-1 (]: Finished running node model.llm_tracker.llm_value_scores
+[0m22:25:58.023281 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:25:58.026153 [debug] [MainThread]: On master: BEGIN
+[0m22:25:58.030061 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:25:58.125489 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:25:58.128810 [debug] [MainThread]: On master: COMMIT
+[0m22:25:58.130878 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:25:58.133746 [debug] [MainThread]: On master: COMMIT
+[0m22:25:58.137694 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:25:58.139802 [debug] [MainThread]: On master: Close
+[0m22:25:58.148954 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:25:58.151284 [debug] [MainThread]: Connection 'list_llm_tracker_main_combined' was properly closed.
+[0m22:25:58.153377 [debug] [MainThread]: Connection 'create_llm_tracker_main_combined' was properly closed.
+[0m22:25:58.155841 [debug] [MainThread]: Connection 'list_llm_tracker_main_formatted' was properly closed.
+[0m22:25:58.158581 [debug] [MainThread]: Connection 'model.llm_tracker.llm_value_scores' was properly closed.
+[0m22:25:58.161359 [debug] [MainThread]: Connection 'model.llm_tracker.openrouter_formatted' was properly closed.
+[0m22:25:58.165846 [info ] [MainThread]: 
+[0m22:25:58.170222 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 11.06 seconds (11.06s).
+[0m22:25:58.176254 [debug] [MainThread]: Command end result
+[0m22:25:58.265061 [info ] [MainThread]: 
+[0m22:25:58.269408 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:25:58.273897 [info ] [MainThread]: 
+[0m22:25:58.280335 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m22:25:58.311450 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 20.477856, "process_user_time": 11.053268, "process_kernel_time": 17.115429, "process_mem_max_rss": "334772", "process_in_blocks": "1522240", "process_out_blocks": "0"}
+[0m22:25:58.325140 [debug] [MainThread]: Command `dbt run` succeeded at 22:25:58.324475 after 20.50 seconds
+[0m22:25:58.335526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd75785b710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd7576ea050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd7533c2f50>]}
+[0m22:25:58.338892 [debug] [MainThread]: Flushing usage events
+[0m22:26:09.942922 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b625fe910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b625f2c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b625fc4d0>]}
+
+
+============================== 22:26:09.956498 | 16636a37-96c8-418d-a867-0d47cb1daa03 ==============================
+[0m22:26:09.956498 [info ] [MainThread]: Running with dbt=1.7.19
+[0m22:26:09.958907 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/opt/airflow/dbt_project/logs', 'version_check': 'True', 'profiles_dir': '/opt/airflow/dbt_project', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt test --profiles-dir /opt/airflow/dbt_project --project-dir /opt/airflow/dbt_project', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:26:10.271351 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '16636a37-96c8-418d-a867-0d47cb1daa03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b57521fd0>]}
+[0m22:26:10.352147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '16636a37-96c8-418d-a867-0d47cb1daa03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b638c0550>]}
+[0m22:26:10.355235 [info ] [MainThread]: Registered adapter: duckdb=1.7.2
+[0m22:26:10.374931 [debug] [MainThread]: checksum: a8d43cdff37d0f32d7fbe4c5c25bea4bb6c86e162f8ce8fdb1a38cdcf7495431, vars: {}, profile: , target: , version: 1.7.19
+[0m22:26:10.642691 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:26:10.645471 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:26:10.655405 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '16636a37-96c8-418d-a867-0d47cb1daa03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b62fd4b90>]}
+[0m22:26:10.718590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '16636a37-96c8-418d-a867-0d47cb1daa03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b574e03d0>]}
+[0m22:26:10.723351 [info ] [MainThread]: Found 3 models, 10 tests, 0 sources, 0 exposures, 0 metrics, 391 macros, 0 groups, 0 semantic models
+[0m22:26:10.726389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '16636a37-96c8-418d-a867-0d47cb1daa03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b6246f790>]}
+[0m22:26:10.732056 [info ] [MainThread]: 
+[0m22:26:10.735623 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m22:26:10.747751 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_llm_tracker_main_combined'
+[0m22:26:10.749915 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_llm_tracker_main_formatted'
+[0m22:26:10.768047 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_combined"
+[0m22:26:10.772116 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_formatted"
+[0m22:26:10.774894 [debug] [ThreadPool]: On list_llm_tracker_main_combined: BEGIN
+[0m22:26:10.777926 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: BEGIN
+[0m22:26:10.780440 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:26:10.782412 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:26:10.836047 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:26:10.836950 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:26:10.840476 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_formatted"
+[0m22:26:10.842776 [debug] [ThreadPool]: Using duckdb connection "list_llm_tracker_main_combined"
+[0m22:26:10.844964 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker_main_formatted"} */
+select
+      'llm_tracker' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_formatted'
+    and table_catalog = 'llm_tracker'
+  
+[0m22:26:10.847214 [debug] [ThreadPool]: On list_llm_tracker_main_combined: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "connection_name": "list_llm_tracker_main_combined"} */
+select
+      'llm_tracker' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where table_schema = 'main_combined'
+    and table_catalog = 'llm_tracker'
+  
+[0m22:26:10.884317 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:26:10.885110 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m22:26:10.901272 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: ROLLBACK
+[0m22:26:10.903908 [debug] [ThreadPool]: On list_llm_tracker_main_combined: ROLLBACK
+[0m22:26:10.908036 [debug] [ThreadPool]: Failed to rollback 'list_llm_tracker_main_formatted'
+[0m22:26:10.909647 [debug] [ThreadPool]: Failed to rollback 'list_llm_tracker_main_combined'
+[0m22:26:10.911007 [debug] [ThreadPool]: On list_llm_tracker_main_formatted: Close
+[0m22:26:10.913040 [debug] [ThreadPool]: On list_llm_tracker_main_combined: Close
+[0m22:26:10.928699 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '16636a37-96c8-418d-a867-0d47cb1daa03', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b62548a10>]}
+[0m22:26:10.931185 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:26:10.933030 [debug] [MainThread]: On master: BEGIN
+[0m22:26:10.936312 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:26:10.976587 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:26:10.978206 [debug] [MainThread]: On master: COMMIT
+[0m22:26:10.979823 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:26:10.981319 [debug] [MainThread]: On master: COMMIT
+[0m22:26:10.983177 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:26:10.985714 [debug] [MainThread]: On master: Close
+[0m22:26:10.990685 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m22:26:10.993078 [info ] [MainThread]: 
+[0m22:26:11.008173 [debug] [Thread-1 (]: Began running node test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db
+[0m22:26:11.009315 [debug] [Thread-2 (]: Began running node test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db
+[0m22:26:11.011600 [info ] [Thread-1 (]: 1 of 10 START test accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra  [RUN]
+[0m22:26:11.014264 [info ] [Thread-2 (]: 2 of 10 START test accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked  [RUN]
+[0m22:26:11.017063 [debug] [Thread-1 (]: Acquiring new duckdb connection 'test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db'
+[0m22:26:11.020605 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db'
+[0m22:26:11.023206 [debug] [Thread-1 (]: Began compiling node test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db
+[0m22:26:11.025023 [debug] [Thread-2 (]: Began compiling node test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db
+[0m22:26:11.047339 [debug] [Thread-1 (]: Writing injected SQL for node "test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db"
+[0m22:26:11.056950 [debug] [Thread-2 (]: Writing injected SQL for node "test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db"
+[0m22:26:11.071793 [debug] [Thread-1 (]: Timing info for test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db (compile): 22:26:11.026794 => 22:26:11.071288
+[0m22:26:11.074033 [debug] [Thread-1 (]: Began executing node test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db
+[0m22:26:11.075067 [debug] [Thread-2 (]: Timing info for test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db (compile): 22:26:11.048161 => 22:26:11.074671
+[0m22:26:11.093960 [debug] [Thread-1 (]: Writing runtime sql for node "test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db"
+[0m22:26:11.094947 [debug] [Thread-2 (]: Began executing node test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db
+[0m22:26:11.103454 [debug] [Thread-2 (]: Writing runtime sql for node "test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db"
+[0m22:26:11.111445 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db"
+[0m22:26:11.113418 [debug] [Thread-1 (]: On test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db: BEGIN
+[0m22:26:11.114846 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db"
+[0m22:26:11.116383 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:26:11.118673 [debug] [Thread-2 (]: On test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db: BEGIN
+[0m22:26:11.157026 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.158487 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:26:11.160474 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db"
+[0m22:26:11.163665 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.164600 [debug] [Thread-1 (]: On test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        price_tier as value_field,
+        count(*) as n_records
+
+    from "llm_tracker"."main_combined"."llm_value_scores"
+    group by price_tier
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'free','budget','mid','premium','ultra'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m22:26:11.166511 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db"
+[0m22:26:11.171960 [debug] [Thread-2 (]: On test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+with all_values as (
+
+    select
+        quality_tier as value_field,
+        count(*) as n_records
+
+    from "llm_tracker"."main_combined"."llm_value_scores"
+    group by quality_tier
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'elite','high','medium','low','unranked'
+)
+
+
+
+      
+    ) dbt_internal_test
+[0m22:26:11.192864 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.193584 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.198602 [debug] [Thread-1 (]: Timing info for test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db (execute): 22:26:11.076113 => 22:26:11.198227
+[0m22:26:11.202938 [debug] [Thread-2 (]: Timing info for test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db (execute): 22:26:11.098589 => 22:26:11.202593
+[0m22:26:11.205002 [debug] [Thread-1 (]: On test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db: ROLLBACK
+[0m22:26:11.207294 [debug] [Thread-2 (]: On test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db: ROLLBACK
+[0m22:26:11.210514 [debug] [Thread-1 (]: Failed to rollback 'test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db'
+[0m22:26:11.212502 [debug] [Thread-2 (]: Failed to rollback 'test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db'
+[0m22:26:11.214747 [debug] [Thread-1 (]: On test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db: Close
+[0m22:26:11.217898 [debug] [Thread-2 (]: On test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db: Close
+[0m22:26:11.221526 [info ] [Thread-1 (]: 1 of 10 PASS accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra  [[32mPASS[0m in 0.21s]
+[0m22:26:11.231883 [info ] [Thread-2 (]: 2 of 10 PASS accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked  [[32mPASS[0m in 0.21s]
+[0m22:26:11.233891 [debug] [Thread-1 (]: Finished running node test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db
+[0m22:26:11.236758 [debug] [Thread-2 (]: Finished running node test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db
+[0m22:26:11.238897 [debug] [Thread-1 (]: Began running node test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3
+[0m22:26:11.241119 [debug] [Thread-2 (]: Began running node test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7
+[0m22:26:11.244003 [info ] [Thread-1 (]: 3 of 10 START test not_null_llm_value_scores_model_id .......................... [RUN]
+[0m22:26:11.246213 [info ] [Thread-2 (]: 4 of 10 START test not_null_lmsys_formatted_ingestion_date ..................... [RUN]
+[0m22:26:11.248848 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.llm_tracker.accepted_values_llm_value_scores_price_tier__free__budget__mid__premium__ultra.c7318918db, now test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3)
+[0m22:26:11.251437 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.llm_tracker.accepted_values_llm_value_scores_quality_tier__elite__high__medium__low__unranked.c896efa7db, now test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7)
+[0m22:26:11.255323 [debug] [Thread-1 (]: Began compiling node test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3
+[0m22:26:11.257609 [debug] [Thread-2 (]: Began compiling node test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7
+[0m22:26:11.265582 [debug] [Thread-1 (]: Writing injected SQL for node "test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3"
+[0m22:26:11.272066 [debug] [Thread-2 (]: Writing injected SQL for node "test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7"
+[0m22:26:11.283164 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3 (compile): 22:26:11.259183 => 22:26:11.282763
+[0m22:26:11.286072 [debug] [Thread-1 (]: Began executing node test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3
+[0m22:26:11.287940 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7 (compile): 22:26:11.267167 => 22:26:11.287432
+[0m22:26:11.291178 [debug] [Thread-1 (]: Writing runtime sql for node "test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3"
+[0m22:26:11.293957 [debug] [Thread-2 (]: Began executing node test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7
+[0m22:26:11.299921 [debug] [Thread-2 (]: Writing runtime sql for node "test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7"
+[0m22:26:11.313176 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3"
+[0m22:26:11.315164 [debug] [Thread-1 (]: On test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3: BEGIN
+[0m22:26:11.315859 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7"
+[0m22:26:11.317922 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:26:11.320960 [debug] [Thread-2 (]: On test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7: BEGIN
+[0m22:26:11.353218 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.354784 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:26:11.357432 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3"
+[0m22:26:11.360677 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.362089 [debug] [Thread-1 (]: On test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select model_id
+from "llm_tracker"."main_combined"."llm_value_scores"
+where model_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:26:11.364180 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7"
+[0m22:26:11.367832 [debug] [Thread-2 (]: On test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select ingestion_date
+from "llm_tracker"."main_formatted"."lmsys_formatted"
+where ingestion_date is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:26:11.368742 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.372279 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.374284 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3 (execute): 22:26:11.288838 => 22:26:11.373977
+[0m22:26:11.378015 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7 (execute): 22:26:11.297444 => 22:26:11.377655
+[0m22:26:11.379355 [debug] [Thread-1 (]: On test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3: ROLLBACK
+[0m22:26:11.381540 [debug] [Thread-2 (]: On test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7: ROLLBACK
+[0m22:26:11.383432 [debug] [Thread-1 (]: Failed to rollback 'test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3'
+[0m22:26:11.386129 [debug] [Thread-2 (]: Failed to rollback 'test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7'
+[0m22:26:11.388215 [debug] [Thread-1 (]: On test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3: Close
+[0m22:26:11.390133 [debug] [Thread-2 (]: On test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7: Close
+[0m22:26:11.392942 [info ] [Thread-1 (]: 3 of 10 PASS not_null_llm_value_scores_model_id ................................ [[32mPASS[0m in 0.14s]
+[0m22:26:11.399684 [info ] [Thread-2 (]: 4 of 10 PASS not_null_lmsys_formatted_ingestion_date ........................... [[32mPASS[0m in 0.15s]
+[0m22:26:11.403135 [debug] [Thread-1 (]: Finished running node test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3
+[0m22:26:11.405770 [debug] [Thread-2 (]: Finished running node test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7
+[0m22:26:11.407623 [debug] [Thread-1 (]: Began running node test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b
+[0m22:26:11.409681 [debug] [Thread-2 (]: Began running node test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d
+[0m22:26:11.411977 [info ] [Thread-1 (]: 5 of 10 START test not_null_lmsys_formatted_model_key .......................... [RUN]
+[0m22:26:11.413860 [info ] [Thread-2 (]: 6 of 10 START test not_null_openrouter_formatted_avg_price_per_1m_usd .......... [RUN]
+[0m22:26:11.416021 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_llm_value_scores_model_id.80a2d370b3, now test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b)
+[0m22:26:11.419128 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_lmsys_formatted_ingestion_date.95c01161e7, now test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d)
+[0m22:26:11.421496 [debug] [Thread-1 (]: Began compiling node test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b
+[0m22:26:11.423635 [debug] [Thread-2 (]: Began compiling node test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d
+[0m22:26:11.430982 [debug] [Thread-1 (]: Writing injected SQL for node "test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b"
+[0m22:26:11.439830 [debug] [Thread-2 (]: Writing injected SQL for node "test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d"
+[0m22:26:11.456171 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d (compile): 22:26:11.432277 => 22:26:11.455684
+[0m22:26:11.458909 [debug] [Thread-2 (]: Began executing node test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d
+[0m22:26:11.460199 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b (compile): 22:26:11.425064 => 22:26:11.459683
+[0m22:26:11.464171 [debug] [Thread-2 (]: Writing runtime sql for node "test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d"
+[0m22:26:11.466511 [debug] [Thread-1 (]: Began executing node test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b
+[0m22:26:11.473438 [debug] [Thread-1 (]: Writing runtime sql for node "test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b"
+[0m22:26:11.483315 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d"
+[0m22:26:11.486113 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d: BEGIN
+[0m22:26:11.487160 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b"
+[0m22:26:11.489700 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:26:11.492099 [debug] [Thread-1 (]: On test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b: BEGIN
+[0m22:26:11.519545 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.521717 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:26:11.523720 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d"
+[0m22:26:11.526500 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.527656 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select avg_price_per_1m_usd
+from "llm_tracker"."main_formatted"."openrouter_formatted"
+where avg_price_per_1m_usd is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:26:11.529604 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b"
+[0m22:26:11.532538 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.533060 [debug] [Thread-1 (]: On test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select model_key
+from "llm_tracker"."main_formatted"."lmsys_formatted"
+where model_key is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:26:11.536514 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d (execute): 22:26:11.461574 => 22:26:11.536019
+[0m22:26:11.540440 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.540940 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d: ROLLBACK
+[0m22:26:11.544629 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b (execute): 22:26:11.470355 => 22:26:11.544243
+[0m22:26:11.546419 [debug] [Thread-2 (]: Failed to rollback 'test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d'
+[0m22:26:11.548195 [debug] [Thread-1 (]: On test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b: ROLLBACK
+[0m22:26:11.550210 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d: Close
+[0m22:26:11.553905 [debug] [Thread-1 (]: Failed to rollback 'test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b'
+[0m22:26:11.556515 [info ] [Thread-2 (]: 6 of 10 PASS not_null_openrouter_formatted_avg_price_per_1m_usd ................ [[32mPASS[0m in 0.14s]
+[0m22:26:11.559022 [debug] [Thread-1 (]: On test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b: Close
+[0m22:26:11.560915 [debug] [Thread-2 (]: Finished running node test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d
+[0m22:26:11.566910 [info ] [Thread-1 (]: 5 of 10 PASS not_null_lmsys_formatted_model_key ................................ [[32mPASS[0m in 0.15s]
+[0m22:26:11.569901 [debug] [Thread-2 (]: Began running node test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8
+[0m22:26:11.573319 [debug] [Thread-1 (]: Finished running node test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b
+[0m22:26:11.575301 [info ] [Thread-2 (]: 7 of 10 START test not_null_openrouter_formatted_ingestion_date ................ [RUN]
+[0m22:26:11.577630 [debug] [Thread-1 (]: Began running node test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1
+[0m22:26:11.580290 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_openrouter_formatted_avg_price_per_1m_usd.0acb8e353d, now test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8)
+[0m22:26:11.582235 [info ] [Thread-1 (]: 8 of 10 START test not_null_openrouter_formatted_model_id ...................... [RUN]
+[0m22:26:11.584599 [debug] [Thread-2 (]: Began compiling node test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8
+[0m22:26:11.587617 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_lmsys_formatted_model_key.5c92f9827b, now test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1)
+[0m22:26:11.593034 [debug] [Thread-2 (]: Writing injected SQL for node "test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8"
+[0m22:26:11.595600 [debug] [Thread-1 (]: Began compiling node test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1
+[0m22:26:11.604697 [debug] [Thread-1 (]: Writing injected SQL for node "test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1"
+[0m22:26:11.612853 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8 (compile): 22:26:11.589090 => 22:26:11.612432
+[0m22:26:11.614713 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1 (compile): 22:26:11.598648 => 22:26:11.614042
+[0m22:26:11.615793 [debug] [Thread-2 (]: Began executing node test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8
+[0m22:26:11.617617 [debug] [Thread-1 (]: Began executing node test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1
+[0m22:26:11.622101 [debug] [Thread-2 (]: Writing runtime sql for node "test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8"
+[0m22:26:11.626675 [debug] [Thread-1 (]: Writing runtime sql for node "test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1"
+[0m22:26:11.637589 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8"
+[0m22:26:11.639818 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8: BEGIN
+[0m22:26:11.641397 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1"
+[0m22:26:11.642541 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:26:11.644924 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1: BEGIN
+[0m22:26:11.672384 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.673979 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:26:11.676281 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8"
+[0m22:26:11.680146 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.681607 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select ingestion_date
+from "llm_tracker"."main_formatted"."openrouter_formatted"
+where ingestion_date is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:26:11.683790 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1"
+[0m22:26:11.689333 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.689890 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select model_id
+from "llm_tracker"."main_formatted"."openrouter_formatted"
+where model_id is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:26:11.692957 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8 (execute): 22:26:11.619685 => 22:26:11.692626
+[0m22:26:11.695777 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.696265 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8: ROLLBACK
+[0m22:26:11.700060 [debug] [Thread-1 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1 (execute): 22:26:11.624005 => 22:26:11.699742
+[0m22:26:11.701777 [debug] [Thread-2 (]: Failed to rollback 'test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8'
+[0m22:26:11.704168 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1: ROLLBACK
+[0m22:26:11.705993 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8: Close
+[0m22:26:11.708285 [debug] [Thread-1 (]: Failed to rollback 'test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1'
+[0m22:26:11.711809 [info ] [Thread-2 (]: 7 of 10 PASS not_null_openrouter_formatted_ingestion_date ...................... [[32mPASS[0m in 0.13s]
+[0m22:26:11.714266 [debug] [Thread-1 (]: On test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1: Close
+[0m22:26:11.716610 [debug] [Thread-2 (]: Finished running node test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8
+[0m22:26:11.722741 [info ] [Thread-1 (]: 8 of 10 PASS not_null_openrouter_formatted_model_id ............................ [[32mPASS[0m in 0.14s]
+[0m22:26:11.725421 [debug] [Thread-2 (]: Began running node test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11
+[0m22:26:11.728510 [debug] [Thread-1 (]: Finished running node test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1
+[0m22:26:11.730657 [info ] [Thread-2 (]: 9 of 10 START test not_null_openrouter_formatted_provider ...................... [RUN]
+[0m22:26:11.732704 [debug] [Thread-1 (]: Began running node test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735
+[0m22:26:11.735240 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_openrouter_formatted_ingestion_date.6488601df8, now test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11)
+[0m22:26:11.737516 [info ] [Thread-1 (]: 10 of 10 START test unique_openrouter_formatted_model_id ....................... [RUN]
+[0m22:26:11.739321 [debug] [Thread-2 (]: Began compiling node test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11
+[0m22:26:11.742464 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.llm_tracker.not_null_openrouter_formatted_model_id.92f1aee7e1, now test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735)
+[0m22:26:11.750411 [debug] [Thread-2 (]: Writing injected SQL for node "test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11"
+[0m22:26:11.752034 [debug] [Thread-1 (]: Began compiling node test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735
+[0m22:26:11.762712 [debug] [Thread-1 (]: Writing injected SQL for node "test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735"
+[0m22:26:11.773711 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11 (compile): 22:26:11.744115 => 22:26:11.773165
+[0m22:26:11.776125 [debug] [Thread-2 (]: Began executing node test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11
+[0m22:26:11.777042 [debug] [Thread-1 (]: Timing info for test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735 (compile): 22:26:11.755843 => 22:26:11.776691
+[0m22:26:11.780370 [debug] [Thread-2 (]: Writing runtime sql for node "test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11"
+[0m22:26:11.783888 [debug] [Thread-1 (]: Began executing node test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735
+[0m22:26:11.790363 [debug] [Thread-1 (]: Writing runtime sql for node "test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735"
+[0m22:26:11.798918 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11"
+[0m22:26:11.800933 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11: BEGIN
+[0m22:26:11.801642 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735"
+[0m22:26:11.803731 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:26:11.805505 [debug] [Thread-1 (]: On test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735: BEGIN
+[0m22:26:11.834556 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.836620 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:26:11.838842 [debug] [Thread-2 (]: Using duckdb connection "test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11"
+[0m22:26:11.841256 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.842758 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select provider
+from "llm_tracker"."main_formatted"."openrouter_formatted"
+where provider is null
+
+
+
+      
+    ) dbt_internal_test
+[0m22:26:11.844392 [debug] [Thread-1 (]: Using duckdb connection "test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735"
+[0m22:26:11.847233 [debug] [Thread-1 (]: On test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735: /* {"app": "dbt", "dbt_version": "1.7.19", "profile_name": "llm_tracker", "target_name": "dev", "node_id": "test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    model_id as unique_field,
+    count(*) as n_records
+
+from "llm_tracker"."main_formatted"."openrouter_formatted"
+where model_id is not null
+group by model_id
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m22:26:11.847763 [debug] [Thread-2 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.853751 [debug] [Thread-2 (]: Timing info for test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11 (execute): 22:26:11.778119 => 22:26:11.853330
+[0m22:26:11.856004 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11: ROLLBACK
+[0m22:26:11.858679 [debug] [Thread-2 (]: Failed to rollback 'test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11'
+[0m22:26:11.859221 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m22:26:11.860581 [debug] [Thread-2 (]: On test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11: Close
+[0m22:26:11.864203 [debug] [Thread-1 (]: Timing info for test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735 (execute): 22:26:11.787891 => 22:26:11.863770
+[0m22:26:11.866574 [info ] [Thread-2 (]: 9 of 10 PASS not_null_openrouter_formatted_provider ............................ [[32mPASS[0m in 0.13s]
+[0m22:26:11.868700 [debug] [Thread-1 (]: On test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735: ROLLBACK
+[0m22:26:11.870578 [debug] [Thread-2 (]: Finished running node test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11
+[0m22:26:11.872501 [debug] [Thread-1 (]: Failed to rollback 'test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735'
+[0m22:26:11.875225 [debug] [Thread-1 (]: On test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735: Close
+[0m22:26:11.882347 [info ] [Thread-1 (]: 10 of 10 PASS unique_openrouter_formatted_model_id ............................. [[32mPASS[0m in 0.14s]
+[0m22:26:11.884887 [debug] [Thread-1 (]: Finished running node test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735
+[0m22:26:11.889273 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:26:11.891015 [debug] [MainThread]: On master: BEGIN
+[0m22:26:11.892950 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:26:11.920122 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:26:11.922284 [debug] [MainThread]: On master: COMMIT
+[0m22:26:11.924288 [debug] [MainThread]: Using duckdb connection "master"
+[0m22:26:11.926514 [debug] [MainThread]: On master: COMMIT
+[0m22:26:11.929002 [debug] [MainThread]: SQL status: OK in 0.0 seconds
+[0m22:26:11.930942 [debug] [MainThread]: On master: Close
+[0m22:26:11.935777 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:26:11.938228 [debug] [MainThread]: Connection 'list_llm_tracker_main_combined' was properly closed.
+[0m22:26:11.940348 [debug] [MainThread]: Connection 'list_llm_tracker_main_formatted' was properly closed.
+[0m22:26:11.942883 [debug] [MainThread]: Connection 'test.llm_tracker.unique_openrouter_formatted_model_id.0bfaaad735' was properly closed.
+[0m22:26:11.944966 [debug] [MainThread]: Connection 'test.llm_tracker.not_null_openrouter_formatted_provider.ca4a8a6b11' was properly closed.
+[0m22:26:11.947550 [info ] [MainThread]: 
+[0m22:26:11.949276 [info ] [MainThread]: Finished running 10 tests in 0 hours 0 minutes and 1.21 seconds (1.21s).
+[0m22:26:11.952269 [debug] [MainThread]: Command end result
+[0m22:26:11.995047 [info ] [MainThread]: 
+[0m22:26:11.997512 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:26:11.999715 [info ] [MainThread]: 
+[0m22:26:12.003000 [info ] [MainThread]: Done. PASS=10 WARN=0 ERROR=0 SKIP=0 TOTAL=10
+[0m22:26:12.007138 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 2.1497972, "process_user_time": 3.792801, "process_kernel_time": 1.759547, "process_mem_max_rss": "193644", "process_in_blocks": "66384", "process_out_blocks": "0"}
+[0m22:26:12.010043 [debug] [MainThread]: Command `dbt test` succeeded at 22:26:12.009826 after 2.15 seconds
+[0m22:26:12.012235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b6299b050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b66cf9050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b66ce6190>]}
+[0m22:26:12.014392 [debug] [MainThread]: Flushing usage events
