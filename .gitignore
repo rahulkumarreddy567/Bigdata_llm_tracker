@@ -1,5 +1,6 @@
 # Python
 __pycache__/
+llm_tracker/.pycache_tmp/
 *.py[cod]
 *$py.class
 *.so

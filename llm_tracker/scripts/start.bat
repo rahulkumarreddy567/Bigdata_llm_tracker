@@ -39,7 +39,7 @@ echo Kibana is healthy!
 
 echo.
 echo [7/7] Automatically creating Kibana dashboard with visualizations...
-powershell -ExecutionPolicy Bypass -File "%~dp0create_dashboard.ps1"
+python setup_kibana_dashboard.py
 
 echo.
 echo ============================================================
