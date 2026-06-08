@@ -80,6 +80,8 @@ For Railway, use the service configs and start scripts under `railway/`, and fol
 
 If you prefer Railway services to pull prebuilt images instead of building from source, use [docs/RAILWAY_DOCKER_IMAGE_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RAILWAY_DOCKER_IMAGE_DEPLOY.md).
 
+For direct GitHub-to-Render deployment, use the root [render.yaml](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/render.yaml) and [docs/RENDER_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RENDER_DEPLOY.md).
+
 ## Important fields
 
 The dashboard uses the fields already present in the Elasticsearch mapping:

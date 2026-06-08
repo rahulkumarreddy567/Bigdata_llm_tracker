@@ -29,3 +29,4 @@ Cloud deployment notes are in [docs/CLOUD_DEPLOY.md](/D:/chrome%20programs%20dug
 AWS EC2 deployment notes are in [docs/AWS_EC2_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/AWS_EC2_DEPLOY.md).
 Railway deployment notes are in [docs/RAILWAY_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RAILWAY_DEPLOY.md).
 Railway Docker image deployment notes are in [docs/RAILWAY_DOCKER_IMAGE_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RAILWAY_DOCKER_IMAGE_DEPLOY.md).
+Render deployment notes are in [docs/RENDER_DEPLOY.md](/D:/chrome%20programs%20duggempudirahul56@gmail.com/llm_tracker_final/docs/RENDER_DEPLOY.md).

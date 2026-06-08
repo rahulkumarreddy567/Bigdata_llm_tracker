@@ -13,11 +13,13 @@ COPY railway/airflow-common.sh /opt/airflow/airflow-common.sh
 COPY railway/airflow-webserver-start.sh /opt/airflow/airflow-webserver-start.sh
 COPY railway/airflow-scheduler-start.sh /opt/airflow/airflow-scheduler-start.sh
 COPY railway/create-kibana-dashboard.sh /opt/airflow/create-kibana-dashboard.sh
+COPY railway/render-bootstrap-dashboard.sh /opt/airflow/render-bootstrap-dashboard.sh
 
 RUN chmod +x /opt/airflow/airflow-common.sh \
     /opt/airflow/airflow-webserver-start.sh \
     /opt/airflow/airflow-scheduler-start.sh \
     /opt/airflow/create-kibana-dashboard.sh \
+    /opt/airflow/render-bootstrap-dashboard.sh \
  && mkdir -p /opt/airflow/data
 
 CMD ["/opt/airflow/airflow-webserver-start.sh"]
