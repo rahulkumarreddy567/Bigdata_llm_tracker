@@ -51,7 +51,7 @@ services:
     plan: starter
     dockerContext: ./llm_tracker
     dockerfilePath: ./llm_tracker/railway/Dockerfile.airflow
-    startCommand: /bin/bash /opt/airflow/airflow-webserver-start.sh
+    dockerCommand: /bin/bash /opt/airflow/airflow-webserver-start.sh
     initialDeployHook: /bin/bash /opt/airflow/render-bootstrap-dashboard.sh
     healthCheckPath: /health
     envVars:
@@ -97,7 +97,7 @@ services:
     plan: starter
     dockerContext: ./llm_tracker
     dockerfilePath: ./llm_tracker/railway/Dockerfile.airflow
-    startCommand: /bin/bash /opt/airflow/airflow-scheduler-start.sh
+    dockerCommand: /bin/bash /opt/airflow/airflow-scheduler-start.sh
     disk:
       name: airflow-data
       mountPath: /opt/airflow/data
