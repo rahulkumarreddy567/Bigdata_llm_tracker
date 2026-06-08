@@ -1,0 +1,10 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "/llm_tracker/railway/Dockerfile.airflow"
+
+[deploy]
+startCommand = "/bin/bash /opt/airflow/airflow-webserver-start.sh"
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10

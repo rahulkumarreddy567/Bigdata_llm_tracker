@@ -10,14 +10,15 @@ caused Kibana UI errors.
 from __future__ import annotations
 
 import json
+import os
 import sys
 import urllib.error
 import urllib.parse
 import urllib.request
 
 
-ELASTICSEARCH_URL = "http://localhost:9200"
-KIBANA_URL = "http://localhost:5601"
+ELASTICSEARCH_URL = os.getenv("ELASTICSEARCH_URL", "http://localhost:9200")
+KIBANA_URL = os.getenv("KIBANA_URL", "http://localhost:5601")
 INDEX_NAME = "llm_value_scores"
 DATA_VIEW_ID = "llm-data-view"
 DASHBOARD_ID = "llm-dashboard-main"
